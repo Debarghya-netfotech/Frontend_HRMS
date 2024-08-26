@@ -8,7 +8,6 @@ import PartTwo from './PartTwo';
 const MainLandingPage = () => {
   return (
     <div className='min-h-screen '>
-      {/* Header Section */}
       <div className="bg-[#378BA6] w-full h-[96px] flex items-center justify-between px-4 md:px-6 lg:px-8">
         <div className='flex flex-row items-center gap-2'>
           <img src={Recutify} alt="Recutify" className='w-16 h-auto' />
@@ -18,13 +17,12 @@ const MainLandingPage = () => {
         </div>
         <button className="w-[150px] md:w-[160px] lg:w-[180px] h-[48px] md:h-[50px] lg:h-[56px] p-2 gap-2 md:gap-3 lg:gap-4 rounded-lg bg-[#EAF1F3] mr-4 md:mr-6 lg:mr-8 flex items-center">
           <img src={Button} alt="Button" className='w-8 h-auto' />
-          <h1 className='font-jost text-[18px] md:text-[20px] lg:text-[24px] font-semibold leading-[22px] md:leading-[24px] lg:leading-[28px] text-[#378BA6] ml-2'>
+          <a href='/Signup' className='font-jost text-[18px] md:text-[20px] lg:text-[24px] font-semibold leading-[22px] md:leading-[24px] lg:leading-[28px] text-[#378BA6] ml-2'>
             Sign Up
-          </h1>
+          </a>
         </button>
       </div>
 
-      {/* Main Content Section */}
       <div className='bg-[#EAF1F3] w-full flex items-center justify-center'>
         <div className='flex flex-col md:flex-row lg:flex-row w-full md:w-[90%] lg:w-[90%] mt-8 md:mt-12 lg:mt-16 h-auto md:h-[455px] mb-8 md:mb-12 lg:mb-16 gap-6 md:gap-8 lg:gap-[105px]'>
           <div className='flex flex-col w-full md:w-[50%] lg:w-[45%] my-auto'>
