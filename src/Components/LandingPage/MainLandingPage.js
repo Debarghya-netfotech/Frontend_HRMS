@@ -12,7 +12,7 @@ const MainLandingPage = () => {
         <div className='flex flex-row items-center gap-2'>
           <img src={Recutify} alt="Recutify" className='w-16 h-auto' />
           <h1 className="font-jost text-[24px] md:text-[28px] lg:text-[32px] font-medium leading-[28.8px] md:leading-[32px] lg:leading-[46.24px] text-left text-white">
-            Recutify
+            Recrutify
           </h1>
         </div>
         <button className="w-[150px] md:w-[160px] lg:w-[180px] h-[48px] md:h-[50px] lg:h-[56px] p-2 gap-2 md:gap-3 lg:gap-4 rounded-lg bg-[#EAF1F3] mr-4 md:mr-6 lg:mr-8 flex items-center">

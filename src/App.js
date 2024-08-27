@@ -10,6 +10,7 @@ import MultiStepForm from './pages/User Management/MultiStepForm';
 import ProfileSuccess from './pages/User Management/ProfileSuccess';
 import PersonalInfo from './pages/profile/PersonalInfo';
 import ResetPassword from './pages/profile/ResetPassword';
+import JDList from './pages/JD/JDList';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/Profile-Success' element={<ProfileSuccess />} />
           <Route path='/Profile' element={<PersonalInfo />} />
           <Route path='/ResetPassword' element={<ResetPassword />} />
+          <Route path='/JDList' element={<JDList />} />
         </Routes>
       </BrowserRouter>
 

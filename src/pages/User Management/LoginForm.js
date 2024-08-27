@@ -19,7 +19,7 @@ const LoginForm = () => {
 
   return (
     <>
-    <Sidebar/>
+    {/* <Sidebar/> */}
 <div >
     <div className="max-w-sm mx-auto p-10 bg-white rounded-lg text-left shadow-[6px_6px_20px_0px_rgba(0,0,0,0.12)] ">
       <h2 className="text-[var(--Dark-500,var(--Grey-Med,#848484))] font-jost text-[20px] font-normal leading-[28px] self-stretch">Welcome!</h2>
