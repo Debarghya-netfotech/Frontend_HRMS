@@ -4,11 +4,12 @@ import Image2 from '../../Images/Frame 1686561440.png';
 import Image3 from '../../Images/Frame 1686561442.png';
 import Image4 from '../../Images/Frame 1686561443.png';
 import Image5 from '../../Images/Frame 1686561444.png';
-import Image6 from '../../Images/Recruit_ATS-216x216.png.png';
-import Image7 from '../../Images/Support-Platformstatus-JR-216x216.png.png';
+
 import Image8 from '../../Images/Group 1000.png'
 import Image9 from '../../Images/Group 1000009887.png'
+import CountUp from 'react-countup';
 import PartThree from './PartThree';
+import ScrollTrigger from  'react-scroll-trigger';
 // FAQCard Component
 const FAQCard = ({ question, answer, isExpanded, onClick }) => (
   <div className='w-full bg-[#EAF1F3] rounded-[9.75px] mb-2'>
@@ -36,6 +37,7 @@ const FAQCard = ({ question, answer, isExpanded, onClick }) => (
 const PartTwo = () => {
   const [expandedCardIndex, setExpandedCardIndex] = useState(null);
   const [currentImage, setCurrentImage] = useState(Image1);
+  const [counterOn , setCounterOn]= useState(false);
 
   // FAQ data
   const faqData = [
@@ -59,20 +61,40 @@ const PartTwo = () => {
         <div>
           <div className='flex flex-row gap-40'>
             <div className='flex flex-col'>
-              <h1 className='font-jost text-[50px] font-medium leading-[54px] text-center text-[#378BA6]'>89%</h1>
+              <ScrollTrigger onEnter={()=> setCounterOn(true)} onExit={()=> setCounterOn(false)}>
+              <p className='font-jost text-[50px] font-medium leading-[54px] text-center text-[#378BA6]'>
+                {counterOn && <CountUp start={0} end={89} duration={2} delay={0} /> }%
+              </p>
+              </ScrollTrigger>
+
               <h1 className='font-jost text-[20px] text-center text-[#378BA6]'>Decreased<br />Paperwork</h1>
             </div>
             <div className='flex flex-col'>
-              <h1 className='font-jost text-[50px] font-medium leading-[54px] text-center text-[#378BA6]'>89%</h1>
-              <h1 className='font-jost text-[20px] text-center text-[#378BA6]'>Better Onboarding<br />Experience</h1>
+              <ScrollTrigger onEnter={()=> setCounterOn(true)} onExit={()=> setCounterOn(false)}>
+              <p className='font-jost text-[50px] font-medium leading-[54px] text-center text-[#378BA6]'>
+                {counterOn && <CountUp start={0} end={69} duration={2} delay={0} /> }%
+              </p>
+              </ScrollTrigger>
+
+              <h1 className='font-jost text-[20px] text-center text-[#378BA6]'>Decreased<br />Paperwork</h1>
             </div>
             <div className='flex flex-col'>
-              <h1 className='font-jost text-[50px] font-medium leading-[54px] text-center text-[#378BA6]'>89%</h1>
-              <h1 className='font-jost text-[20px] text-center text-[#378BA6]'>Improved Payroll<br />Efficiency</h1>
+              <ScrollTrigger onEnter={()=> setCounterOn(true)} onExit={()=> setCounterOn(false)}>
+              <p className='font-jost text-[50px] font-medium leading-[54px] text-center text-[#378BA6]'>
+                {counterOn && <CountUp start={0} end={39} duration={2} delay={0} /> }%
+              </p>
+              </ScrollTrigger>
+
+              <h1 className='font-jost text-[20px] text-center text-[#378BA6]'>Decreased<br />Paperwork</h1>
             </div>
             <div className='flex flex-col'>
-              <h1 className='font-jost text-[50px] font-medium leading-[54px] text-center text-[#378BA6]'>89%</h1>
-              <h1 className='font-jost text-[20px] text-center text-[#378BA6]'>Avg amount of time<br />save on HR admin</h1>
+              <ScrollTrigger onEnter={()=> setCounterOn(true)} onExit={()=> setCounterOn(false)}>
+              <p className='font-jost text-[50px] font-medium leading-[54px] text-center text-[#378BA6]'>
+                {counterOn && <CountUp start={0} end={14} duration={2} delay={0} /> }%
+              </p>
+              </ScrollTrigger>
+
+              <h1 className='font-jost text-[20px] text-center text-[#378BA6]'>Decreased<br />Paperwork</h1>
             </div>
           </div>
         </div>
@@ -86,36 +108,36 @@ const PartTwo = () => {
             </h1>
             <h1 className='font-jost text-[52px] font-[800] leading-[72.8px] tracking-[-0.2px] text-center text-white'>
               Recuritify
-            </h1>
+            </h1>;
           </div>
           <div className='flex flex-col ml-10 gap-4'>
-            <div className='flex'>
+            <div className='flex '>
               <button
-                className='w-[200px] h-[27px] p-[0px] pb-[3px] gap-0 border-b-[2px] border-transparent text-white hover:bg-[#4A8CC1] transition-colors duration-300'
+                className='w-[200px] h-[27px] p-[0px] pb-[3px] gap-0 border-b-[2px] border-transparent text-white hover:underline hover-text-white transition-colors duration-300'
                 onClick={() => setCurrentImage(Image4)}
               >
                 Upload/LockJD
               </button>
               <button
-                className='w-[200px] h-[27px] p-[0px] pb-[3px] gap-0 border-b-[2px] border-transparent text-white hover:bg-[#4A8CC1] transition-colors duration-300'
+                className='w-[200px] h-[27px] p-[0px] pb-[3px] gap-0 border-b-[2px] border-transparent text-white hover:underline hover-text-white text-bold transition-colors duration-300'
                 onClick={() => setCurrentImage(Image3)}
               >
                 Track JD
               </button>
               <button
-                className='w-[200px] h-[27px] p-[0px] pb-[3px] gap-0 border-b-[2px] border-transparent text-white hover:bg-[#4A8CC1] transition-colors duration-300'
+                className='w-[200px] h-[27px] p-[0px] pb-[3px] gap-0 border-b-[2px] border-transparent text-white hover:underline hover-text-white text-bold transition-colors duration-300'
                 onClick={() => setCurrentImage(Image1)}
               >
                 Candidate Database
               </button>
               <button
-                className='w-[200px] h-[27px] p-[0px] pb-[3px] gap-0 border-b-[2px] border-transparent text-white hover:bg-[#4A8CC1] transition-colors duration-300'
+                className='w-[200px] h-[27px] p-[0px] pb-[3px] gap-0 border-b-[2px] border-transparent text-white hover:underline hover-text-white text-bold transition-colors duration-300'
                 onClick={() => setCurrentImage(Image2)}
               >
                 Chat Support
               </button>
               <button
-                className='w-[200px] h-[27px] p-[0px] pb-[3px] gap-0 border-b-[2px] border-transparent text-white hover:bg-[#4A8CC1] transition-colors duration-300'
+                className='w-[200px] h-[27px] p-[0px] pb-[3px] gap-0 border-b-[2px] border-transparent text-white hover:underline hover-text-white text-bold transition-colors duration-300'
                 onClick={() => setCurrentImage(Image5)}
               >
                 Track Finances
@@ -195,12 +217,12 @@ const PartTwo = () => {
         <h1 className='font-jost text-[40px] text-[white] font-semibold '>Ready to Embrace the Future of Hiring?</h1>
         <h1 className='font-jost text-[28px] text-[#4F4F4F] font-[30px] '>Smart match with Recruitify. Get matched to great talent instantly.</h1>
         <button className='w-[200px] h-[52px] p-[8px] gap-[8px] rounded-[8px] bg-[#ECB015] text-white mt-4'>
-        <p className='font-jost text-[24px] font-semibold '>
+          <p className='font-jost text-[24px] font-semibold '>
         Get Started >
-      </p>
-    </button>
+          </p>
+        </button>
       </div>
-      <PartThree/>
+      <PartThree />
     </div>
   );
 };
