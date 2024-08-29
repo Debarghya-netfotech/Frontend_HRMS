@@ -11,6 +11,7 @@ import ProfileSuccess from './pages/User Management/ProfileSuccess';
 import PersonalInfo from './pages/profile/PersonalInfo';
 import ResetPassword from './pages/profile/ResetPassword';
 import JDList from './pages/JD/JDList';
+import Dashboard from './pages/Dashboard/Dashboard'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path='/Profile' element={<PersonalInfo />} />
           <Route path='/ResetPassword' element={<ResetPassword />} />
           <Route path='/JDList' element={<JDList />} />
+          <Route path='/Dashboard' element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
 
