@@ -28,7 +28,7 @@ const JobDetails = ({ job }) => {
 
       </div>
       <div className="flex flex-row justify-between">
-        <button className="flex justify-center items-center gap-[8px] h-[35.347px] p-[8px_12px] rounded-[8px] bg-[#378BA6] text-white text-center font-jost text-[24px] font-semibold leading-[28px] active:bg-[#A4A4A4]">Lock for me <img src={lockIcon} alt='lockIcon' /> </button>
+      <a href='/LockModal' ><button className="flex justify-center items-center gap-[8px] h-[35.347px] p-[8px_12px] rounded-[8px] bg-[#378BA6] text-white text-center font-jost text-[24px] font-semibold leading-[28px] focus:bg-[#A4A4A4]">  Lock for me <img src={lockIcon} alt='lockIcon' /> </button></a>
         <p className="text-black font-jost text-sm font-semibold leading-9" >
           Status: <span className={` w-[75px] h-[14px] px-3 py-2 flex-col justify-center rounded-md text-center font-jost text-base font-normal leading-[28px] ${job.status === 'Open' ? 'bg-[#DBF0CA] text-[#477C1D]'
             : job.status === 'Closed' ? 'bg-[#FFC738] text-white'

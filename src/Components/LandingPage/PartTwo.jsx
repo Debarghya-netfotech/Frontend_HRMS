@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { IoIosArrowForward } from "react-icons/io";
 import Image1 from '../../Images/Frame 1686561439.png';
 import Image2 from '../../Images/Frame 1686561440.png';
 import Image3 from '../../Images/Frame 1686561442.png';
@@ -150,13 +151,13 @@ const PartTwo = () => {
         </div>
       </div>
 
-      <div className='flex mt-14 justify-center flex flex-col'>
+      <div className='mt-14 justify-center flex flex-col'>
         <h1 className='text-center font-jost text-5xl font-bold text-[#378BA6] mb-10'>
           Effortless Employment
         </h1>
       </div>
 
-      <div className='w-[90%] bg-white m-auto p-[20px_32px] gap-[40px] rounded-[20px_20px_20px_20px] flex flex-row gap-10'>
+      <div className='w-[90%] bg-white m-auto p-[20px_32px] rounded-[20px_20px_20px_20px] flex flex-row gap-10'>
         <img src={Image9} alt='For Recruiters' className='w-[290px] h-[290px]' />
         <div className='flex flex-col'>
           <h1 className='w-[330px] h-[56px] text-[40px] font-[700] leading-[56px] text-left text-[#4F4F4F]'>
@@ -177,7 +178,7 @@ const PartTwo = () => {
         </div>
       </div>
 
-      <div className='w-[90%] bg-white m-auto p-[20px_32px] gap-[40px] rounded-[20px_20px_20px_20px] flex flex-row gap-10 mt-10'>
+      <div className='w-[90%] bg-white m-auto p-[20px_32px] rounded-[20px_20px_20px_20px] flex flex-row gap-10 mt-10'>
         <img src={Image8} alt='For Employers' className='w-[290px] h-[290px]' />
         <div className='flex flex-col'>
           <h1 className='w-[330px] h-[56px] text-[40px] font-[700] leading-[56px] text-left text-[#4F4F4F]'>
@@ -217,8 +218,8 @@ const PartTwo = () => {
         <h1 className='font-jost text-[40px] text-[white] font-semibold '>Ready to Embrace the Future of Hiring?</h1>
         <h1 className='font-jost text-[28px] text-[#4F4F4F] font-[30px] '>Smart match with Recruitify. Get matched to great talent instantly.</h1>
         <button className='w-[200px] h-[52px] p-[8px] gap-[8px] rounded-[8px] bg-[#ECB015] text-white mt-4'>
-          <p className='font-jost text-[24px] font-semibold '>
-        Get Started >
+          <p className=' flex items-center font-jost text-[24px] font-semibold '>
+        Get Started <IoIosArrowForward/>
           </p>
         </button>
       </div>

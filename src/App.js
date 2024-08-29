@@ -12,6 +12,9 @@ import PersonalInfo from './pages/profile/PersonalInfo';
 import ResetPassword from './pages/profile/ResetPassword';
 import JDList from './pages/JD/JDList';
 import Dashboard from './pages/Dashboard/Dashboard'
+import LockForMeModal from './pages/JD/LockForMeModal';
+import SignupSuccessJD from './pages/JD/SignupSuccessJD';
+import JDSummary from './pages/JD/JDSummary';
 
 function App() {
   return (
@@ -30,6 +33,9 @@ function App() {
           <Route path='/ResetPassword' element={<ResetPassword />} />
           <Route path='/JDList' element={<JDList />} />
           <Route path='/Dashboard' element={<Dashboard />} />
+          <Route path='/LockModal' element={<LockForMeModal />} />
+          <Route path='/JDSignUpSuccess' element={<SignupSuccessJD />} />
+          <Route path='/JDSummary' element={<JDSummary />} />
         </Routes>
       </BrowserRouter>
 

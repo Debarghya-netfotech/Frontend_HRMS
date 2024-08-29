@@ -108,12 +108,12 @@ const JDList = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4 gap-4 min-w-screen flex ">
-      <div className="">
+    <div className="min-h-screen max-w-8xl bg-white p-4 gap-4 flex items-start ">
+      <div className="w-full">
         {/* <JobFilters/> */}
         <JobList jobs={jobs} onJobClick={handleJobClick}/>
       </div>
-      <div className="">
+      <div className="w-2/5">
         <JobDetails job={selectedJob} />
       </div>
     </div>
