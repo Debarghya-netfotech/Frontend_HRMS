@@ -5,7 +5,7 @@ import MapPin from '../../Images/Map Pin.png';
 
 const Contact = () => {
   return (
-    <div className='w-full max-w-[1050px] h-auto py-8 px-4 sm:px-6 md:px-8 lg:px-10  rounded-br-lg rounded-bl-lg border border-[#378BA6] border-opacity-50 bg-white shadow-lg flex flex-col mx-auto'>
+    <div className='w-full max-w-[100%] h-auto py-8 px-4 sm:px-6 md:px-8 lg:px-10  rounded-br-lg rounded-bl-lg border border-[#378BA6] border-opacity-50 bg-white shadow-lg flex flex-col mx-auto'>
       <div className='w-full'>
         <h1 className='text-[#4F4F4F] text-[20px] sm:text-[24px] font-semibold leading-[24px] sm:leading-[28px] font-jost self-stretch mb-6 sm:mb-8 text-Josh'>
           CONTACT US

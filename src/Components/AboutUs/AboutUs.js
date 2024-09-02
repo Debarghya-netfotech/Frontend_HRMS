@@ -2,7 +2,7 @@ import React, { useState } from 'react'; // Import useState from React
 import Termsandcondition from './Termsandcondition';
 import FAQ from './FAQ';
 import Contact from './Contact';
-
+import Sidebar from '../../pages/global/Sidebar';
 function AboutUs() {
   const [activeTab, setActiveTab] = useState('Terms'); // Fix useState usage
   
@@ -20,7 +20,11 @@ function AboutUs() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto mt-10">
+    <div className='max-h-screen flex flex-row gap-4'>
+      <div className='max-[30%]'>
+        <Sidebar/>
+      </div>
+    <div className=" w-[70%] mt-10 m-[auto]">
       
 
       {/* Tabs Section */}
@@ -48,6 +52,7 @@ function AboutUs() {
       <div className="mt-0 border border-[var(--Teal,#378BA6)] rounded-lg">
         {renderTabContent()}
       </div>
+    </div>
     </div>
   );
 }
