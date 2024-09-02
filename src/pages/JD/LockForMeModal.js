@@ -45,9 +45,10 @@ function LockForMeModal() {
               <button
                 onClick={handleConfirm}
                 className="flex p-2 px-3 justify-center items-center gap-2 flex-1 self-stretch rounded-lg bg-[#378BA6] text-white text-center font-jost text-2xl font-semibold leading-[28px]"
-              >
-                Confirm
+              ><a href='/JDSignUpSuccess'>
+                Confirm</a>
               </button>
+              
             </div>
           </div>
         </div>

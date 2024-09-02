@@ -4,6 +4,7 @@ import MonthlyDashboard from './MonthlyDashboard';
 import JDList from '../JD/JDList';
 import JobFilters from '../JD/JobFilters';
 import Yearly from './Yearly';
+import Sidebar from '../global/Sidebar.js'
 // import JobCard from '../JD/JobCard';
 
 function Dashboard() {
@@ -22,6 +23,9 @@ function Dashboard() {
     }
   };
   return (
+    <>
+    <div className='max-h-screen flex flex-row gap-4'>
+    <Sidebar className='max-[30%] '/>
     <div className="max-w-7xl  mt-10">
       <JobFilters/>
       {/* Tabs Section */}
@@ -60,7 +64,10 @@ function Dashboard() {
         <JDList/>
       </div>
     </div>
+    </div>
+    </>
   )
 }
+
 
 export default Dashboard

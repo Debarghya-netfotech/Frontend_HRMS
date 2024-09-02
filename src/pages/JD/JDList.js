@@ -13,6 +13,7 @@ const JDList = () => {
   const jobs = [
     {
       id: '12345678',
+      name: 'Samuel Matthew',
       title: 'Graphic Designer',
       company: 'Neftotech Solutions',
       location: 'Kharadi, Pune',
@@ -44,6 +45,7 @@ const JDList = () => {
     },
     {
       id: '34567890',
+      name: 'Samuel M',
       title: 'Marketing Manager',
       company: 'BrightFuture Ltd.',
       location: 'Mumbai, Maharashtra',
@@ -75,6 +77,7 @@ const JDList = () => {
     },
     {
       id: '45678901',
+      name: 'S Matthew',
       title: 'Data Analyst',
       company: 'DataSolutions Inc.',
       location: 'Hyderabad, Telangana',
