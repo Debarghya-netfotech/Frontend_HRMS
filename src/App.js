@@ -16,6 +16,7 @@ import LockForMeModal from './pages/JD/LockForMeModal';
 import SignupSuccessJD from './pages/JD/SignupSuccessJD';
 import JDSummary from './pages/JD/JDSummary';
 import FinanceList from './pages/Finance/FinanceList';
+import CandidateForm from './pages/Candidates/CandidateForm';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path='/JDSignUpSuccess' element={<SignupSuccessJD />} />
           <Route path='/JDSummary' element={<JDSummary />} />
           <Route path='/FinanceList' element={<FinanceList />} />
+          <Route path='/Candidate-Form' element={<CandidateForm />} />
         </Routes>
       </BrowserRouter>
 
