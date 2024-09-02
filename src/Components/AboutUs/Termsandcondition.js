@@ -3,7 +3,7 @@ import React from 'react';
 const Termsandcondition = () => {
   return (
     <>
-    <div className="py-10 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 w-full max-w-[1022px] h-auto rounded-br-lg rounded-bl-lg border border-[#378BA6] border-opacity-50 bg-white shadow-md mx-auto">
+    <div className="py-10 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 w-full max-w-[100%] h-auto rounded-br-lg rounded-bl-lg border border-[#378BA6] border-opacity-50 bg-white shadow-md mx-auto">
       <h2 className="text-[#4F4F4F] text-[20px] sm:text-[24px] font-semibold leading-[24px] sm:leading-[28px] font-jost self-stretch mb-6 sm:mb-8 text-Josh">
         TERMS AND CONDITIONS
       </h2>
