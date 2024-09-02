@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import WeeklyDashboard from './WeeklyDashboard';
 import MonthlyDashboard from './MonthlyDashboard';
 import JDList from '../JD/JDList';
-
+import JobFilters from '../JD/JobFilters';
 import Yearly from './Yearly';
 // import JobCard from '../JD/JobCard';
 
@@ -23,8 +23,7 @@ function Dashboard() {
   };
   return (
     <div className="max-w-7xl  mt-10">
-      
-
+      <JobFilters/>
       {/* Tabs Section */}
       <div className="flex space-x-1 text-[var(--Teal,#378BA6)] text-center text-[18px] font-normal leading-[36px] ">
         <button

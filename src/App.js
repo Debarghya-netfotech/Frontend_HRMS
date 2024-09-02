@@ -15,6 +15,7 @@ import Dashboard from './pages/Dashboard/Dashboard'
 import LockForMeModal from './pages/JD/LockForMeModal';
 import SignupSuccessJD from './pages/JD/SignupSuccessJD';
 import JDSummary from './pages/JD/JDSummary';
+import FinanceList from './pages/Finance/FinanceList';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path='/LockModal' element={<LockForMeModal />} />
           <Route path='/JDSignUpSuccess' element={<SignupSuccessJD />} />
           <Route path='/JDSummary' element={<JDSummary />} />
+          <Route path='/FinanceList' element={<FinanceList />} />
         </Routes>
       </BrowserRouter>
 
