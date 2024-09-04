@@ -17,6 +17,8 @@ import SignupSuccessJD from './pages/JD/SignupSuccessJD';
 import JDSummary from './pages/JD/JDSummary';
 import FinanceList from './pages/Finance/FinanceList';
 import CandidateForm from './pages/Candidates/CandidateForm';
+import FinanceCandidate from './pages/Finance/FinanceCandidate';
+import FinancePayroll from './pages/Finance/FinancePayroll';
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
           <Route path='/JDSummary' element={<JDSummary />} />
           <Route path='/FinanceList' element={<FinanceList />} />
           <Route path='/Candidate-Form' element={<CandidateForm />} />
+          <Route path='/FinanceCandidate' element={<FinanceCandidate />} />
+          <Route path='/FinancePayroll' element={<FinancePayroll />} />
         </Routes>
       </BrowserRouter>
 
