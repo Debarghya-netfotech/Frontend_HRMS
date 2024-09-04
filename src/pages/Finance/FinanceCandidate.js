@@ -26,7 +26,7 @@ const FinanceCandidate = () => {
                                 <h1 className='overflow-hidden text-[#378BA6] truncate whitespace-nowrap text-base font-medium leading-5'>Candidate ID : 67890987</h1>
                             </div>
                             <div className='text-black text-sm font-semibold font-jost leading-9 flex flex-row gap-2 items-center'>Exp:
-                                <h1 className='text-[#A38740] text-center text-base font-normal font-jost leading-7 text-center bg-[#FFFB9A]'>02 Years</h1>
+                                <h1 className='text-[#A38740] text-base font-normal font-jost leading-7 text-center bg-[#FFFB9A]'>02 Years</h1>
                             </div>
                             <div className='flex h-[40px] w-[40px] justify-center items-center bg-[#EAF1F3] ml-8'>
                                 < MdDelete className='w-16 h-auto' />

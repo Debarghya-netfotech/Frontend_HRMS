@@ -19,6 +19,8 @@ import FinanceList from './pages/Finance/FinanceList';
 import CandidateForm from './pages/Candidates/CandidateForm';
 import FinanceCandidate from './pages/Finance/FinanceCandidate';
 import FinancePayroll from './pages/Finance/FinancePayroll';
+import Candidates from './pages/Candidates/Candidates';
+import AddCandidates from './pages/Candidates/AddCandidates';
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
           <Route path='/Candidate-Form' element={<CandidateForm />} />
           <Route path='/FinanceCandidate' element={<FinanceCandidate />} />
           <Route path='/FinancePayroll' element={<FinancePayroll />} />
+          <Route path='/Candidates' element={<Candidates />} />
+          <Route path='/AddCandidates' element={<AddCandidates />} />
         </Routes>
       </BrowserRouter>
 
