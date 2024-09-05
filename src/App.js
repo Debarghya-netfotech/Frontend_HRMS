@@ -21,6 +21,8 @@ import FinanceCandidate from './pages/Finance/FinanceCandidate';
 import FinancePayroll from './pages/Finance/FinancePayroll';
 import Candidates from './pages/Candidates/Candidates';
 import AddCandidates from './pages/Candidates/AddCandidates';
+import CandidatesOne from './pages/CandidatesDatabase/CandidatesOne';
+import SelectFromJD from './pages/CandidatesDatabase/SelectFromJD';
 
 function App() {
   return (
@@ -48,6 +50,8 @@ function App() {
           <Route path='/FinancePayroll' element={<FinancePayroll />} />
           <Route path='/Candidates' element={<Candidates />} />
           <Route path='/AddCandidates' element={<AddCandidates />} />
+          <Route path='/CandidatesOne' element={<CandidatesOne />} />
+          <Route path='/SelectFromJD' element={<SelectFromJD />} />
         </Routes>
       </BrowserRouter>
 
