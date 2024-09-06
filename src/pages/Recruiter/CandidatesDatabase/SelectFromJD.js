@@ -1,8 +1,8 @@
 import React from 'react'
-import Sidebar from '../global/Sidebar'
-import JobFilters from '../JD/JobFilters'
-import ExportIcon from '../../Images/ExportIcon.png'
-import Chat from '../../Images/ChatIcon.png'
+import Sidebar from '../../global/Sidebar'
+import JobFilters from '../../Recruiter/JD/JobFilters'
+import ExportIcon from '../../../Images/ExportIcon.png'
+import Chat from '../../../Images/ChatIcon.png'
 function SelectFromJD() {
   return (
     <div className='max-h-screen gap-6 p-4 bg-[#EAF1F4] flex flex-col items-center'>

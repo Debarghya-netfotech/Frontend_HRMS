@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import WeeklyDashboard from './WeeklyDashboard';
-import MonthlyDashboard from './MonthlyDashboard';
-import JDList from '../JD/JDList';
-import JobFilters from '../JD/JobFilters';
-import Yearly from './Yearly';
-import Sidebar from '../global/Sidebar.js'
+import WeeklyDashboard from './WeeklyDashboard.js';
+import MonthlyDashboard from './MonthlyDashboard.js';
+import JDList from '../../Recruiter/JD/JDList.js';
+import JobFilters from '../../Recruiter/JD/JobFilters.js';
+import Yearly from './Yearly.js';
+import Sidebar from '../../global/Sidebar.js'
 // import JobCard from '../JD/JobCard';
 
 function Dashboard() {

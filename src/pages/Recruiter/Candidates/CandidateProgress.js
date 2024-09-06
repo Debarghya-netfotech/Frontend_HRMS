@@ -1,6 +1,6 @@
 import React from 'react';
-import DeleteIcon from '../../Images/DeleteIcon.png';
-import ExportIcon from '../../Images/ExportIcon.png'
+import DeleteIcon from '../../../Images/DeleteIcon.png';
+import ExportIcon from '../../../Images/ExportIcon.png'
 
 const CandidateProgress = () => {
   return (

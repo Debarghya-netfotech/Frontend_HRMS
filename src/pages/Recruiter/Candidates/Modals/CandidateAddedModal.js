@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { motion } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
 
 function CandidateAddedModal () {
+  const navigate = useNavigate();
+  
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        navigate('/JDSummary');
+      }, 3000);
+  
+      return () => clearTimeout(timer);
+    }, [navigate]);
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="bg-white bop-8 rounded-lg shadow-lg text-center p-12">

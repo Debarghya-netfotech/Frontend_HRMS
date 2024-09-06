@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import ExportIcon from '../../Images/ExportIcon.png';
-import Chat from '../../Images/ChatIcon.png';
+import ExportIcon from '../../../Images/ExportIcon.png';
+import Chat from '../../../Images/ChatIcon.png';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
-import Sidebar from '../global/Sidebar';
+import Sidebar from '../../global/Sidebar';
 import CandidateProgress from './CandidateProgress';
 
 const AddCandidates = () => {

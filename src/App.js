@@ -2,32 +2,32 @@ import './App.css';
 import MainLandingPage from './Components/LandingPage/MainLandingPage';
 import { BrowserRouter as Router, Route, Routes, Link, BrowserRouter } from 'react-router-dom';
 import AboutUs from './Components/AboutUs/AboutUs';
-import LoginForm from './pages/User Management/LoginForm';
-import SignupForm from './pages/User Management/SignupForm';
-import OTPVerification from './pages/User Management/OTPVerification';
-import SignupSuccess from './pages/User Management/SignupSuccess';
-import MultiStepForm from './pages/User Management/MultiStepForm';
-import ProfileSuccess from './pages/User Management/ProfileSuccess';
-import PersonalInfo from './pages/profile/PersonalInfo';
-import ResetPassword from './pages/profile/ResetPassword';
-import JDList from './pages/JD/JDList';
-import Dashboard from './pages/Dashboard/Dashboard'
-import LockForMeModal from './pages/JD/LockForMeModal';
-import SignupSuccessJD from './pages/JD/SignupSuccessJD';
-import JDSummary from './pages/JD/JDSummary';
-import FinanceList from './pages/Finance/FinanceList';
-import CandidateForm from './pages/Candidates/CandidateForm';
-import FinanceCandidate from './pages/Finance/FinanceCandidate';
-import FinancePayroll from './pages/Finance/FinancePayroll';
-import Candidates from './pages/Candidates/Candidates';
-import AddCandidates from './pages/Candidates/AddCandidates';
-import CandidatesOne from './pages/CandidatesDatabase/CandidatesOne';
-import SelectFromJD from './pages/CandidatesDatabase/SelectFromJD';
-import AddCandidateModal from './pages/Candidates/Modals/AddCandidateModal';
-import SubmitCandidateModal from './pages/Candidates/Modals/SubmitCandidateModal';
-import CandidateIncompleteModal from './pages/Candidates/Modals/CandidateIncompleteModal';
-import CandidateAddedModal from './pages/Candidates/Modals/CandidateAddedModal';
-import CandidateFeedback from './pages/Candidates/Modals/CandidateFeedback';
+import LoginForm from './pages/Recruiter/User Management/LoginForm';
+import SignupForm from './pages/Recruiter/User Management/SignupForm';
+import OTPVerification from './pages/Recruiter/User Management/OTPVerification';
+import SignupSuccess from './pages/Recruiter/User Management/SignupSuccess';
+import MultiStepForm from './pages/Recruiter/User Management/MultiStepForm';
+import ProfileSuccess from './pages/Recruiter/User Management/ProfileSuccess';
+import PersonalInfo from './pages/Recruiter/profile/PersonalInfo';
+import ResetPassword from './pages/Recruiter/profile/ResetPassword';
+import JDList from './pages/Recruiter/JD/JDList';
+import Dashboard from './pages/Recruiter/Dashboard/Dashboard'
+import LockForMeModal from './pages/Recruiter/JD/LockForMeModal';
+import SignupSuccessJD from './pages/Recruiter/JD/SignupSuccessJD';
+import JDSummary from './pages/Recruiter/JD/JDSummary';
+import FinanceList from './pages/Recruiter/Finance/FinanceList';
+import CandidateForm from './pages/Recruiter/Candidates/CandidateForm';
+import FinanceCandidate from './pages/Recruiter/Finance/FinanceCandidate';
+import FinancePayroll from './pages/Recruiter/Finance/FinancePayroll';
+import Candidates from './pages/Recruiter/Candidates/Candidates';
+import AddCandidates from './pages/Recruiter/Candidates/AddCandidates';
+import CandidatesOne from './pages/Recruiter/CandidatesDatabase/CandidatesOne';
+import SelectFromJD from './pages/Recruiter/CandidatesDatabase/SelectFromJD';
+import AddCandidateModal from './pages/Recruiter/Candidates/Modals/AddCandidateModal';
+import SubmitCandidateModal from './pages/Recruiter/Candidates/Modals/SubmitCandidateModal';
+import CandidateIncompleteModal from './pages/Recruiter/Candidates/Modals/CandidateIncompleteModal';
+import CandidateAddedModal from './pages/Recruiter/Candidates/Modals/CandidateAddedModal';
+import CandidateFeedback from './pages/Recruiter/Candidates/Modals/CandidateFeedback';
 
 function App() {
   return (
@@ -61,7 +61,7 @@ function App() {
           <Route path='/SubmitCandidateModal' element={<SubmitCandidateModal />} />
           <Route path='/CandidateIncompleteModal' element={<CandidateIncompleteModal />} />
           <Route path='/CandidateAddedModal' element={<CandidateAddedModal />} />
-          <Route path='/CandidateFeedback' element={<CandidateFeedback />} />
+          <Route path='/CandidateFeedback' element={<CandidateFeedback/>} />
         </Routes>
       </BrowserRouter>
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import Sidebar from '../global/Sidebar'
-import JobFilters from '../JD/JobFilters'
+import Sidebar from '../../global/Sidebar'
+import JobFilters from '../../Recruiter/JD/JobFilters'
 
 import { MdDelete } from "react-icons/md";
 import { FaBriefcase } from "react-icons/fa6";

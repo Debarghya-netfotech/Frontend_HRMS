@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PersonalInformationForm from './PersonalInformationForm';
 import WorkInformationForm from './WorkInformationForm';
 import BankInformationForm from './BankInformationForm';
-import Sidebar from '../global/Sidebar'
+import Sidebar from '../../global/Sidebar'
 
 function PersonalInfo() {
   const [activeTab, setActiveTab] = useState('personal');

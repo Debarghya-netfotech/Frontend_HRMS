@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import LocationIcon from '../../Images/LocationIcon.png';
-import DeleteIcon from '../../Images/DeleteIcon.png';
+import LocationIcon from '../../../Images/LocationIcon.png';
+import DeleteIcon from '../../../Images/DeleteIcon.png';
 
 const CandidateForm = () => {
 

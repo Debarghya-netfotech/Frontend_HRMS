@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import JDIcon from '../../Images/JDicon.png';
-import PayRollIcon from '../../Images/Payrollicon.png';
-import CandidateIcon from '../../Images/Candidateicon.png';
+import JDIcon from '../../../Images/JDicon.png';
+import PayRollIcon from '../../../Images/Payrollicon.png';
+import CandidateIcon from '../../../Images/Candidateicon.png';
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 

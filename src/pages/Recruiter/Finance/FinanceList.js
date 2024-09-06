@@ -1,17 +1,16 @@
 import React from 'react'
-import Sidebar from '../global/Sidebar'
+import Sidebar from '../../global/Sidebar'
 import JobFilters from '../JD/JobFilters'
-import ExportIcon from '../../Images/ExportIcon.png'
-import Chat from '../../Images/ChatIcon.png'
+import ExportIcon from '../../../Images/ExportIcon.png'
+import Chat from '../../../Images/ChatIcon.png'
 function FinanceList() {
 
   return (
-    <div className='max-h-screen flex flex-row gap-6'>
+    <div className='max-h-screen flex flex-row gap-0'>
       <div className='max-[30%]'>
         <Sidebar />
       </div>
-      <div className=' w-[100%] bg-[#EAF1F4] flex flex-col py-5 gap-33 flex-1'>
-        Hi
+      <div className=' w-[100%] bg-[#EAF1F4] flex flex-col p-5 gap-33 flex-1'>
         <div className='flex flex-col justify-center items-start gap-1 p-2.5 self-stretch bg-[#FBEFD0] mb-[20px]'>
           <div className='flex justify-between items-center self-stretch'>
             <div className='flex flex-col w-[50%]'>

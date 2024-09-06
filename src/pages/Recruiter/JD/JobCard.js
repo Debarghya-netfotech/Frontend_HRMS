@@ -1,10 +1,10 @@
 import React from 'react';
 import { IoIosArrowForward } from "react-icons/io";
-import LocationIcon from '../../Images/LocationIcon.png';
-import IndustryIcon from '../../Images/IndustryIcon.png';
-import ExperienceIcon from '../../Images/ExperienceIcon.png';
-import JobTypeIcon from '../../Images/JobTypeIcon.png';
-import SalaryIcon from '../../Images/SalaryIcon.png';
+import LocationIcon from '../../../Images/LocationIcon.png';
+import IndustryIcon from '../../../Images/IndustryIcon.png';
+import ExperienceIcon from '../../../Images/ExperienceIcon.png';
+import JobTypeIcon from '../../../Images/JobTypeIcon.png';
+import SalaryIcon from '../../../Images/SalaryIcon.png';
 
 const JobCard = ({ job, onClick }) => {
   return (

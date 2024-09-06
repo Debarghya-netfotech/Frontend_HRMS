@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import IncompleIcon from '../../../Images/IncompleteIcon.png';
+import IncompleIcon from '../../../../Images/IncompleteIcon.png';
 
 function CandidateIncompleteModal() {
 

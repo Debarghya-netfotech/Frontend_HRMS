@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LocationIcon from '../../Images/LocationIcon.png';
-import IndustryIcon from '../../Images/IndustryIcon.png';
-import ExperienceIcon from '../../Images/ExperienceIcon.png';
-import JobTypeIcon from '../../Images/JobTypeIcon.png';
-import SalaryIcon from '../../Images/SalaryIcon.png';
-import TimeIcon from '../../Images/TimeIcon.png';
-import SubmissionIcon from '../../Images/SubmissionIcon.png';
-import NoticePeriodIcon from '../../Images/NoticePeriodIcon.png';
-import InterviewIcon from '../../Images/InterviewIcon.png';
-import PriorityIcon from '../../Images/PriorityIcon.png';
+import LocationIcon from '../../../Images/LocationIcon.png';
+import IndustryIcon from '../../../Images/IndustryIcon.png';
+import ExperienceIcon from '../../../Images/ExperienceIcon.png';
+import JobTypeIcon from '../../../Images/JobTypeIcon.png';
+import SalaryIcon from '../../../Images/SalaryIcon.png';
+import TimeIcon from '../../../Images/TimeIcon.png';
+import SubmissionIcon from '../../../Images/SubmissionIcon.png';
+import NoticePeriodIcon from '../../../Images/NoticePeriodIcon.png';
+import InterviewIcon from '../../../Images/InterviewIcon.png';
+import PriorityIcon from '../../../Images/PriorityIcon.png';
 import { IoIosArrowForward } from "react-icons/io";
 
 
