@@ -3,23 +3,22 @@ import ExportIcon from '../../Images/ExportIcon.png';
 import Chat from '../../Images/ChatIcon.png';
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io';
 import Sidebar from '../global/Sidebar';
+import CandidateProgress from './CandidateProgress';
 
 const AddCandidates = () => {
   const [currentIcon, setCurrentIcon] = useState('ArrowUp');
+  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
 
   const toggleIcon = () => {
     setCurrentIcon(prevIcon => (prevIcon === 'ArrowUp' ? 'ArrowDown' : 'ArrowUp'));
   };
 
+  const toggleAccordion = () => {
+    setIsAccordionOpen(prevState => !prevState);
+  };
+
   const renderIcon = () => {
-    switch (currentIcon) {
-      case 'ArrowUp':
-        return <IoIosArrowUp size={24} />;
-      case 'ArrowDown':
-        return <IoIosArrowDown size={24} />;
-      default:
-        return <IoIosArrowUp size={24} />;
-    }
+    return currentIcon === 'ArrowUp' ? <IoIosArrowUp size={24} /> : <IoIosArrowDown size={24} />;
   };
 
   return (
@@ -92,13 +91,23 @@ const AddCandidates = () => {
             </a>
             <a href="#" onClick={e => {
               e.preventDefault(); // Prevent default anchor behavior
-              toggleIcon(); // Toggle the icon when the link is clicked
+              toggleAccordion(); // Toggle the accordion when the link is clicked
             }}>
-              <div className='flex w-[40px] h-[40px] p-[7.655px_7.832px_8.345px_8.168px] justify-center items-center rounded-lg bg-[#EAF1F3] w-1/7'>
+              <button className='flex w-[40px] h-[40px] p-[7.655px_7.832px_8.345px_8.168px] justify-center items-center rounded-lg bg-[#EAF1F3] w-1/7'>
                 {renderIcon()}
-              </div>
+              </button>
             </a>
           </div>
+          {/* Accordion Content */}
+          {isAccordionOpen && (
+            <>
+              <div className='w-[100%]'><CandidateProgress /></div>
+              <div className="flex gap-3 mt-7">
+                <button className="flex py-2 px-3 justify-center items-center gap-2 flex-1 rounded-lg border border-[#A4A4A4] bg-white text-[#4F4F4F] text-center text-[20px] font-bold leading-[36px] font-jos">Submit Candidates</button>
+                <button className="flex py-2 px-3 justify-center items-center gap-2 self-stretch rounded-lg bg-[#378BA6] text-white text-center text-[20px] font-bold leading-[36px] font-jos">Add Candidate</button>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>

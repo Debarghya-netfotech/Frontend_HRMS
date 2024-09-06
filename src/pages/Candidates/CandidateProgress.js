@@ -4,39 +4,52 @@ import ExportIcon from '../../Images/ExportIcon.png'
 
 const CandidateProgress = () => {
   return (
-    <div className="p-4 bg-white rounded-lg shadow-md max-w-4xl mx-auto">
-      {/* Candidate Info */}
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center">
-          <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[rgba(55,139,166,0.20)] text-gray-700 font-semibold">
-            C01
-          </div>
-          <div className="ml-4">
-            <div className="font-semibold text-lg">Samuel Matthew</div>
-            <div className="text-sm text-gray-500">Candidate ID: 1254631</div>
-          </div>
+    <div className="p-4 bg-white rounded-lg border border-[#378BA6] shadow-md mx-auto">
+
+      <div className='flex flex-row justify-between'>
+{/* Candidate Info */}
+      <div className="flex items-center mb-4">
+        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[rgba(55,139,166,0.20)] text-gray-700 font-semibold">
+          C01
         </div>
-        <div className="text-red-500 text-sm font-semibold">
-          <span className="mr-1">&#x26A0;</span>Incomplete Form
+        <div className="ml-4">
+          <div className="flex flex-col items-stretch justify-center text-[#4F4F4F] overflow-hidden text-dark-grey text-ellipsis whitespace-nowrap font-jost text-2xl font-medium leading-7">Samuel Matthew</div>
+          <div className="text-sm text-gray-500">Candidate ID: 1254631</div>
+          <div className="text-red-500 text-sm font-semibold">
+            ! Incomplete Form
+          </div>
         </div>
       </div>
 
+      {/* Action Buttons */}
+      <div className="flex justify-end space-x-2">
+        <button className="p-2 h-12 rounded-lg hover:bg-[rgba(55,139,166,0.20)] bg-[rgba(55,139,166,0.30)]">
+          <img src={DeleteIcon} alt='Delete' />
+        </button>
+        <button className="p-2 h-12 rounded-lg hover:bg-[rgba(55,139,166,0.20)] bg-[rgba(55,139,166,0.30)]">
+          <img src={ExportIcon} alt='Export' />
+        </button>
+      </div>
+
+      </div>
+      
+
       {/* Progress Bar */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-4 px-[10%]">
         <div className="flex flex-grow items-center">
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-500 font-semibold">
+          <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-[#378BA6] text-white font-semibold">
             01
           </div>
           <div className="flex-grow border-t border-gray-300"></div>
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-500 font-semibold">
+          <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-[#378BA6] text-white font-semibold">
             02
           </div>
           <div className="flex-grow border-t border-gray-300"></div>
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-500 font-semibold">
+          <div className="relative flex items-center justify-center w-10 h-10 border border-dashed border-[#378BA6] rounded-full text-[#378BA6] font-semibold">
             03
           </div>
           <div className="flex-grow border-t border-gray-300"></div>
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-500 font-semibold">
+          <div className="relative flex items-center justify-center w-10 h-10 rounded-full border border-dashed border-[#378BA6] text-[#378BA6] font-semibold">
             04
           </div>
         </div>
@@ -50,24 +63,16 @@ const CandidateProgress = () => {
       </div>
 
       {/* Employer Remarks */}
-      <div className="mb-4">
-        <label className="text-sm text-gray-500">Employer Remarks:</label>
+      <div className="mb-4 flex flex-row">
+        <label className="text-[#378BA6] font-jost text-base font-bold leading-[20.8px] tracking-[0.08px]">Employer Remarks:</label>
         <input
           type="text"
-          className="w-full p-2 mt-1 border border-gray-300 rounded-lg"
+          className="w-full p-2 border border-b-[#378BA6] border-transparent mt-1 "
           placeholder="."
         />
       </div>
 
-      {/* Action Buttons */}
-      <div className="flex justify-end space-x-2">
-        <button className="p-2 rounded-full hover:bg-[rgba(55,139,166,0.20)] bg-[rgba(55,139,166,0.30)]">
-          <img src={DeleteIcon} alt='Delete' />
-        </button>
-        <button className="p-2 rounded-full hover:bg-[rgba(55,139,166,0.20)] bg-[rgba(55,139,166,0.30)]">
-          <img src={ExportIcon} alt='Export'/>
-        </button>
-      </div>
+      
     </div>
   );
 };

@@ -23,6 +23,11 @@ import Candidates from './pages/Candidates/Candidates';
 import AddCandidates from './pages/Candidates/AddCandidates';
 import CandidatesOne from './pages/CandidatesDatabase/CandidatesOne';
 import SelectFromJD from './pages/CandidatesDatabase/SelectFromJD';
+import AddCandidateModal from './pages/Candidates/Modals/AddCandidateModal';
+import SubmitCandidateModal from './pages/Candidates/Modals/SubmitCandidateModal';
+import CandidateIncompleteModal from './pages/Candidates/Modals/CandidateIncompleteModal';
+import CandidateAddedModal from './pages/Candidates/Modals/CandidateAddedModal';
+import CandidateFeedback from './pages/Candidates/Modals/CandidateFeedback';
 
 function App() {
   return (
@@ -52,6 +57,11 @@ function App() {
           <Route path='/AddCandidates' element={<AddCandidates />} />
           <Route path='/CandidatesOne' element={<CandidatesOne />} />
           <Route path='/SelectFromJD' element={<SelectFromJD />} />
+          <Route path='/AddCandidateModal' element={<AddCandidateModal />} />
+          <Route path='/SubmitCandidateModal' element={<SubmitCandidateModal />} />
+          <Route path='/CandidateIncompleteModal' element={<CandidateIncompleteModal />} />
+          <Route path='/CandidateAddedModal' element={<CandidateAddedModal />} />
+          <Route path='/CandidateFeedback' element={<CandidateFeedback />} />
         </Routes>
       </BrowserRouter>
 
