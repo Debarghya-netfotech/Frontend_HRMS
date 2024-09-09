@@ -1,7 +1,7 @@
 import React from 'react'
-import Sidebar from '../../pages/global/Sidebar'
-import JobFilters from '../../pages/Recruiter/JD/JobFilters'
-import EmployerDetailes from './EmployerData/EmployerDetailes'
+import Sidebar from '../../global/Sidebar'
+import JobFilters from '../../Recruiter/JD/JobFilters'
+import EmployerDetailes from './EmployerDetailes'
 function EmployerJd() {
   
   return (
