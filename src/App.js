@@ -29,8 +29,8 @@ import CandidateIncompleteModal from './pages/Recruiter/Candidates/Modals/Candid
 import CandidateAddedModal from './pages/Recruiter/Candidates/Modals/CandidateAddedModal';
 import CandidateFeedback from './pages/Recruiter/Candidates/Modals/CandidateFeedback';
 // 
-import EmployerJd from './pages/Employer/EmployerJd'
-import EmployerFile from './pages/Employer/EmployerFile';
+import EmployerJd from './pages/Employer/EmployerData/EmployerJd'
+import EmployerFile from './pages/Employer/EmployerData/EmployerFile';
 function App() {
   return (
     <>
