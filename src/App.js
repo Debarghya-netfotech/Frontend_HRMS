@@ -28,7 +28,9 @@ import SubmitCandidateModal from './pages/Recruiter/Candidates/Modals/SubmitCand
 import CandidateIncompleteModal from './pages/Recruiter/Candidates/Modals/CandidateIncompleteModal';
 import CandidateAddedModal from './pages/Recruiter/Candidates/Modals/CandidateAddedModal';
 import CandidateFeedback from './pages/Recruiter/Candidates/Modals/CandidateFeedback';
-
+// 
+import EmployerJd from './pages/Employer/EmployerJd'
+import EmployerFile from './pages/Employer/EmployerFile';
 function App() {
   return (
     <>
@@ -62,6 +64,8 @@ function App() {
           <Route path='/CandidateIncompleteModal' element={<CandidateIncompleteModal />} />
           <Route path='/CandidateAddedModal' element={<CandidateAddedModal />} />
           <Route path='/CandidateFeedback' element={<CandidateFeedback/>} />
+          <Route path='/EmployerJd' element={<EmployerJd />} />
+          <Route path='/EmployerFile' element={<EmployerFile />} />
         </Routes>
       </BrowserRouter>
 
