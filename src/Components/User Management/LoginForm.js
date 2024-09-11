@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import eye from '../../../Images/Eye.png';
-import Google from '../../../Images/Googleicon.png'
-import Sidebar from '../../global/Sidebar.js'
+import eye from '../../Images/Eye.png';
+import Google from '../../Images/Googleicon.png'
+import Sidebar from '../../pages/global/Sidebar';
 
 const LoginForm = () => {
   const [emailOrPhone, setEmailOrPhone] = useState('');

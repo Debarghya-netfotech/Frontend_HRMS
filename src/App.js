@@ -2,7 +2,7 @@ import './App.css';
 import MainLandingPage from './Components/LandingPage/MainLandingPage';
 import { BrowserRouter as Router, Route, Routes, Link, BrowserRouter } from 'react-router-dom';
 import AboutUs from './Components/AboutUs/AboutUs';
-import LoginForm from './pages/Recruiter/User Management/LoginForm';
+import LoginForm from './Components/User Management/LoginForm';
 import SignupForm from './pages/Recruiter/User Management/SignupForm';
 import OTPVerification from './pages/Recruiter/User Management/OTPVerification';
 import SignupSuccess from './pages/Recruiter/User Management/SignupSuccess';
