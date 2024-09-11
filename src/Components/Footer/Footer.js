@@ -5,10 +5,10 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 const Footer = () => {
   return (
     <div>
-      <div className="bg-[#378BA6] w-full h-[368px] flex flex-col lg:flex-row justify-between px-4 md:px-6 lg:px-8">
+      <div className="bg-[#378BA6] w-full h-[368px] flex flex-col  lg:flex-row justify-between px-4 md:px-6 lg:px-8">
         <div className='w-full flex flex-col mt-10'>
           <div className='h-[60%] flex flex-col lg:flex-row'>
-            <div className='w-full lg:w-[85%] flex flex-col'>
+            <div className='w-full lg:w-[85%] flex flex-col items-center lg:items-start'>
               <div className='flex flex-col lg:flex-row gap-4'>
                 <img src={Recutify} alt="Recrutify" className='w-16 h-auto' />
                 <h1 className="font-jost text-[24px] md:text-[28px] lg:text-[32px] font-medium leading-[28.8px] md:leading-[32px] lg:leading-[46.24px] text-left text-white my-auto">

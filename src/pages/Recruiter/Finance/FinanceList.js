@@ -11,11 +11,11 @@ function FinanceList() {
         <Sidebar />
       </div>
       <div className=' w-[100%] bg-[#EAF1F4] flex flex-col p-5 gap-33 flex-1'>
-        <div className='flex flex-col justify-center items-start gap-1 p-2.5 self-stretch bg-[#FBEFD0] mb-[20px]'>
-          <div className='flex justify-between items-center self-stretch'>
+        <div className='flex flex-col w-auto flex-wrap justify-center items-start gap-1 p-2.5 self-stretch bg-[#FBEFD0] mb-[20px] '>
+          <div className='flex justify-between items-center self-stretch md:items-center mb-4  m-8 flex-wrap'>
             <div className='flex flex-col w-[50%]'>
               <h1 className='overflow-hidden text-gray-600 truncate whitespace-nowrap text-2xl font-medium leading-7'>Samule </h1>
-              <h1 className='overflow-hidden text-[#378BA6] truncate whitespace-nowrap text-base font-medium leading-5'> ID : 67890987</h1>
+              <h1 className='overflow-hidden text-[#378BA6] truncate whitespace-nowrap text-base font-medium leading-5 md: mb-4 '> ID : 67890987</h1>
             </div>
             <div className='flex p-2 px-3 gap-3 justify-center items-center rounded bg-white'>
               <h1 className='text-teal-600 text-center text-4xl font-medium leading-7'>10 </h1>
@@ -35,7 +35,7 @@ function FinanceList() {
           </div>
         </div>
         <div><JobFilters /></div>
-        <div className='h-[52px] self-stretch rounded-[8px] bg-[rgba(55,139,166,0.30)] flex justify-between items-center p-8 mt-[20px]'>
+        <div className='h-[52px] self-stretch rounded-[8px] bg-[rgba(55,139,166,0.30)] flex justify-between items-center p-8 mt-[20px] '>
           <h1 className='text-black text-center font-jost text-xl font-normal leading-9'>JD ID</h1>
           <h1 className='text-black text-center font-jost text-xl font-normal leading-9'>CLIENT DETAILS</h1>
           <h1 className='text-black text-center font-jost text-xl font-normal leading-9'>JD DETAIL</h1>
@@ -45,7 +45,7 @@ function FinanceList() {
           <h1 className='text-black text-center font-jost text-xl font-normal leading-9'>STATUS</h1>
         </div>
         <div className='flex flex-col justify-center items-end gap-5 self-stretch rounded-md border border-[#9B9B9B] bg-white shadow-[6px_6px_20px_0px_rgba(0,0,0,0.12)] p-4 mt-6'>
-          <div className='flex justify-between items-center self-stretch'>
+          <div className='flex justify-between items-center self-stretch flex-wrap'>
             <h1 className='text-gray-800 text-center font-sans text-base font-normal leading-6 tracking-tight'>#34567643</h1>
             <div className='flex flex-row items-center'>
               <div className='flex w-[40px] h-[40px] p-[7.655px_7.832px_8.345px_8.168px] justify-center items-center rounded-[45px] bg-[#EAF1F3]'>

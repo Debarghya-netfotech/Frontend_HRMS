@@ -60,7 +60,7 @@ const PartTwo = () => {
           Employment software with proven results
         </h1>
         <div>
-          <div className='flex flex-row gap-40'>
+          <div className='flex flex-row gap-40 md:flex flex-wrap'>
             <div className='flex flex-col'>
               <ScrollTrigger onEnter={()=> setCounterOn(true)} onExit={()=> setCounterOn(false)}>
               <p className='font-jost text-[50px] font-medium leading-[54px] text-center text-[#378BA6]'>
@@ -102,7 +102,7 @@ const PartTwo = () => {
       </div>
 
       <div className='bg-[#378BA6] w-full p-12 flex flex-row justify-between'>
-        <div className='w-[1352.16px] h-[511px] gap-0 flex flex-row justify-around ml-8'>
+        <div className='max-w-[1352.16px] h-[auto] gap-0 flex flex-row justify-around ml-8 flex-wrap'>
           <div className='flex justify-center flex-col'>
             <h1 className='font-jost text-[52px] font-medium leading-[72.8px] tracking-[-0.2px] text-center text-white'>
               You can do<br />it all with
@@ -112,7 +112,7 @@ const PartTwo = () => {
             </h1>;
           </div>
           <div className='flex flex-col ml-10 gap-4'>
-            <div className='flex '>
+            <div className='flex flex-wrap'>
               <button
                 className='w-[200px] h-[27px] p-[0px] pb-[3px] gap-0 border-b-[2px] border-transparent text-white hover:underline hover-text-white transition-colors duration-300'
                 onClick={() => setCurrentImage(Image4)}
@@ -144,8 +144,8 @@ const PartTwo = () => {
                 Track Finances
               </button>
             </div>
-            <div className='flex justify-center mt-8'>
-              <img src={currentImage} alt='Current Display' className='w-auto h-[400px] object-cover' />
+            <div className='flex justify-center mt-8 flex-wrap'>
+              <img src={currentImage} alt='Current Display' className='w-auto max-h-[400px] object-cover flex-wrap  lg:h-[80%] ' />
             </div>
           </div>
         </div>
@@ -157,8 +157,8 @@ const PartTwo = () => {
         </h1>
       </div>
 
-      <div className='w-[90%] bg-white m-auto p-[20px_32px] rounded-[20px_20px_20px_20px] flex flex-row gap-10'>
-        <img src={Image9} alt='For Recruiters' className='w-[290px] h-[290px]' />
+      <div className='w-[90%] bg-white m-auto p-[20px_32px] rounded-[20px_20px_20px_20px] flex flex-row gap-10 flex-wrap '>
+        <img src={Image9} alt='For Recruiters' className='w-[290px] h-[290px] sm:mx-[auto]' />
         <div className='flex flex-col'>
           <h1 className='w-[330px] h-[56px] text-[40px] font-[700] leading-[56px] text-left text-[#4F4F4F]'>
             For Recruiters
@@ -178,8 +178,8 @@ const PartTwo = () => {
         </div>
       </div>
 
-      <div className='w-[90%] bg-white m-auto p-[20px_32px] rounded-[20px_20px_20px_20px] flex flex-row gap-10 mt-10'>
-        <img src={Image8} alt='For Employers' className='w-[290px] h-[290px]' />
+      <div className='w-[90%] bg-white m-auto p-[20px_32px] rounded-[20px_20px_20px_20px] flex flex-row gap-10 mt-10 flex-wrap'>
+        <img src={Image8} alt='For Employers' className='w-[290px] h-[290px] sm:mx-[auto]' />
         <div className='flex flex-col'>
           <h1 className='w-[330px] h-[56px] text-[40px] font-[700] leading-[56px] text-left text-[#4F4F4F]'>
             For Employers
@@ -214,15 +214,19 @@ const PartTwo = () => {
         ))}
       </div>
 
-      <div className='w-[90%] h-[267px] bg-[#378BA6] m-auto p-[40px_176px] gap-[10px] rounded-[14px] flex flex-col mt-10 items-center '>
-        <h1 className='font-jost text-[40px] text-[white] font-semibold '>Ready to Embrace the Future of Hiring?</h1>
-        <h1 className='font-jost text-[28px] text-[#4F4F4F] font-[30px] '>Smart match with Recruitify. Get matched to great talent instantly.</h1>
-        <button className='w-[200px] h-[52px] p-[8px] gap-[8px] rounded-[8px] bg-[#ECB015] text-white mt-4'>
-          <p className=' flex items-center font-jost text-[24px] font-semibold '>
-        Get Started <IoIosArrowForward/>
-          </p>
-        </button>
-      </div>
+      <div className='w-full max-w-[90%] h-auto bg-[#378BA6] mx-auto p-8 md:p-12 lg:p-16 rounded-lg flex flex-col items-center mt-10 gap-6'>
+  <h1 className='font-jost text-[24px] md:text-[32px] lg:text-[40px] text-white font-semibold text-center'>
+    Ready to Embrace the Future of Hiring?
+  </h1>
+  <h1 className='font-jost text-[16px] md:text-[20px] lg:text-[28px] text-[#4F4F4F] font-medium text-center'>
+    Smart match with Recruitify. Get matched to great talent instantly.
+  </h1>
+  <button className='w-full max-w-[200px] h-[52px] p-2 rounded-lg bg-[#ECB015] text-white mt-4 flex items-center justify-center'>
+    <p className='font-jost text-[18px] md:text-[20px] lg:text-[24px] font-semibold flex items-center'>
+      Get Started <IoIosArrowForward className='ml-2' />
+    </p>
+  </button>
+</div>
       <PartThree />
     </div>
   );
