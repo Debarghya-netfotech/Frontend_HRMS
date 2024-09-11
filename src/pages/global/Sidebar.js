@@ -17,11 +17,11 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`flex flex-col h-screen rounded-r-xl bg-[var(--Teal,#378BA6)] text-white ${isOpen ? 'w-64' : 'w-20'} transition-all duration-300`}>
+    <div className={`flex flex-col h-[100%] rounded-r-xl bg-[var(--Teal,#378BA6)] text-white ${isOpen ? 'w-64' : 'w-20'} transition-all duration-300`}>
       {/* Sidebar Header */}
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center">
-          <div className={`w-12 h-13 ${isOpen ? '' : 'hidden'}`}>
+          <div className={`w-12 h-full ${isOpen ? '' : 'hidden'}`}>
             <img src={R} alt="Recrutify Logo" />
           </div>
           {isOpen && <h1 className="text-white font-jost text-4xl font-medium leading-normal w-[182.582px] h-[46.315px] flex-shrink-0">Recrutify</h1>}

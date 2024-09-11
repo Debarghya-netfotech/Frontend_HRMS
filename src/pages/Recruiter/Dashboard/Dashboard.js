@@ -24,7 +24,7 @@ function Dashboard() {
   };
   return (
     <>
-    <div className='max-h-screen flex flex-row gap-4'>
+    <div className='min-h-screen flex flex-row gap-4'>
     <Sidebar className='max-[30%] '/>
     <div className="max-w-7xl  mt-10">
       <JobFilters/>
