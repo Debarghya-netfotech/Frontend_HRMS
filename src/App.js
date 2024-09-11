@@ -31,6 +31,10 @@ import CandidateFeedback from './pages/Recruiter/Candidates/Modals/CandidateFeed
 // 
 import EmployerJd from './pages/Employer/EmployerData/EmployerJd'
 import EmployerFile from './pages/Employer/EmployerData/EmployerFile';
+// import CandidateCard from './pages/Employer/DashBoard/CandidateCard';
+import JobCard from './pages/Employer/DashBoard/JobCard';
+import EmpDashboard from './pages/Employer/DashBoard/Dashboard';
+import EmpJDdetail from './pages/Employer/JDDetail/JDdetail';
 function App() {
   return (
     <>
@@ -66,6 +70,10 @@ function App() {
           <Route path='/CandidateFeedback' element={<CandidateFeedback/>} />
           <Route path='/EmployerJd' element={<EmployerJd />} />
           <Route path='/EmployerFile' element={<EmployerFile />} />
+          {/* <Route path='/CandidateCard' element={<CandidateCard />} /> */}
+          <Route path='/CandidateJobCard' element={<JobCard />} />
+          <Route path='/EmployerDashboard' element={<EmpDashboard />} />
+          <Route path='/EmpJDdetail' element={<EmpJDdetail />} />
         </Routes>
       </BrowserRouter>
 
