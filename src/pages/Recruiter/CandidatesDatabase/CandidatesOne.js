@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react';
+import axios from 'axios';
 import Sidebar from '../../global/Sidebar'
 import JobFilters from '../../Recruiter/JD/JobFilters'
 
@@ -8,6 +9,18 @@ import { FaLocationDot } from "react-icons/fa6";
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 import { FaExternalLinkAlt } from "react-icons/fa";
 function CandidatesOne() {
+
+  // const data=[data,setData]= useState();
+  // useEffect(()=>{
+  //   getBackendData();
+  // },[])
+  // const getBackendData = async () => {
+  //   const backendData =  await axios.get('http://localhost:4000/api/showJDs')
+
+  //   console.log(backendData.data);
+  //   setData(backendData);
+  // }
+  
   return (
     <div className='max-h-screen flex flex-row gap-6'>
       <div className='max-[30%]'>
