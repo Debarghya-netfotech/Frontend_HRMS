@@ -61,7 +61,7 @@ function Dashboard() {
           </div>
           <button className='flex h-[52px] p-[8px_12px] justify-center items-center gap-[8px] rounded-lg bg-[#A4A4A4]'><h1 className='text-white-custom text-center font-jost text-18px font-semibold leading-28px text-white'>See More</h1></button>
         </div>
-        <JDList/>
+        <JDList limit={2}/>
       </div>
     </div>
     </div>
