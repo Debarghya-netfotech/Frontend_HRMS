@@ -60,7 +60,7 @@ function App() {
           <Route path='/FinanceCandidate' element={<FinanceCandidate />} />
           <Route path='/FinancePayroll' element={<FinancePayroll />} />
           <Route path='/Candidates' element={<Candidates />} />
-          <Route path='/AddCandidates' element={<AddCandidates />} />
+          <Route path='/MyWorkspace' element={<AddCandidates />} />
           <Route path='/CandidatesOne' element={<CandidatesOne />} />
           <Route path='/SelectFromJD' element={<SelectFromJD />} />
           <Route path='/AddCandidateModal' element={<AddCandidateModal />} />

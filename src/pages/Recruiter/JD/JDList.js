@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import JobFilters from './JobFilters';
 import JobList from './JobList';
 import JobDetails from './JobDetails';
+import LockForMeModal from './LockForMeModal'; // Import the modal
 
 const JDList = ({ limit = Infinity }) => {
-  const [selectedJob, setSelectedJob] = useState(null);
-  const [jobs, setJobs] = useState([]); // Initialize as an empty array
+  const [selectedJob, setSelectedJob] = useState(null); // To store the selected job
+  const [jobs, setJobs] = useState([]); // To store the list of jobs
+  const [showModal, setShowModal] = useState(false); // To control modal visibility
 
   useEffect(() => {
     getBackendData();
@@ -17,34 +18,32 @@ const JDList = ({ limit = Infinity }) => {
       const response = await axios.get('http://localhost:4000/api/showJDs');
       console.log('Backend data:', response.data);
 
-      // Map the backend data to the format required by JobList
       const formattedJobs = response.data.jds.map((job) => ({
-        id: job._id, // Use the backend _id as the job ID
+        id: job._id, // Ensure this is the correct field name
         title: job.title,
         company: job.client_name,
         location: job.location,
         industry: job.industry,
         experience: job.required_experience,
         salary: job.salary,
-        type: 'Full time', // This can be adjusted based on additional data or logic
+        type: 'Full time',
         interviewRounds: job.rounds_of_interview,
         noticePeriod: job.notice_period,
-        priority: job.jd_status, // This can be adjusted if you have a specific priority field
+        priority: job.jd_status,
         submissionsRequired: job.no_of_openings,
-        uploadedOn: new Date(job.createdAt).toLocaleDateString(), // Format date as needed
-        deliveryRequired: new Date(job.assured_time).toLocaleDateString(), // Format date as needed
+        uploadedOn: new Date(job.createdAt).toLocaleDateString(),
+        deliveryRequired: new Date(job.assured_time).toLocaleDateString(),
         replacementPeriod: job.replacement_period,
-        skills: job.remarks, // Adjust if needed based on the actual data
-        comments: job.remarks, // Adjust if needed based on the actual data
+        skills: job.remarks,
+        comments: job.remarks,
         status: job.jd_status,
         payout: job.payout,
         absoluteValue: job.payout,
         signUpRate: job.sign_up_rate,
-        paymentTerms: [job.payment_terms], // Convert to an array if needed
-        importantNotes: [job.remarks], // Convert to an array if needed
+        paymentTerms: [job.payment_terms],
+        importantNotes: [job.remarks],
       }));
 
-      // Apply the limit to the number of jobs displayed
       setJobs(formattedJobs.slice(0, limit));
     } catch (error) {
       console.error('Error fetching data from backend:', error);
@@ -52,18 +51,30 @@ const JDList = ({ limit = Infinity }) => {
   };
 
   const handleJobClick = (job) => {
+    console.log('Job clicked:', job); // Add this line to debug
     setSelectedJob(job);
+    setShowModal(true); // Show the modal when a job is clicked
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+    setSelectedJob(null); // Reset selected job when modal is closed
   };
 
   return (
     <div className="min-h-screen max-w-8xl bg-white p-4 gap-4 flex items-start">
       <div className="w-full">
-        {/* <JobFilters /> */}
         <JobList jobs={jobs} onJobClick={handleJobClick} />
       </div>
       <div className="w-2/5">
         <JobDetails job={selectedJob} />
       </div>
+      {showModal && selectedJob && (
+        <LockForMeModal
+          id={selectedJob.id}
+          onClose={handleModalClose}
+        />
+      )}
     </div>
   );
 };
