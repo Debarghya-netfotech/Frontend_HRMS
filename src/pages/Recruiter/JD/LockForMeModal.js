@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function LockForMeModal({ id, onClose }) {
   const [isChecked, setIsChecked] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const useNavigate = useNavigate();
 
   const handleConfirm = async () => {
     if (isChecked) {
@@ -23,6 +25,11 @@ function LockForMeModal({ id, onClose }) {
         console.log('Response:', response.data);
         alert('Job Description Locked!');
         onClose(); // Notify parent component that modal is closed
+
+        setTimeout(() => {
+          Navigate('/JDSummary');
+        }, 2000);
+
       } catch (error) {
         console.error('Error locking JD:', error);
         if (error.response) {
