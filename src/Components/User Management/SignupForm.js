@@ -1,26 +1,44 @@
 import React, { useState } from "react";
+import axios from "axios";
 
-function SignupForm() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    mobileNumber: "",
-    joinAs: "",
-    location: "",
-    password: "",
-  });
+const SignupForm = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [mobileNumber, setMobileNumber] = useState('');
+  const [joinAs, setJoinAs] = useState('');
+  const [location, setLocation] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+
+  const getSignupForm = () => {
+    return {
+      firstName, lastName, email, mobileNumber, joinAs, location, password
+    };
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Form Submitted: ${JSON.stringify(formData, null, 2)}`);
+    const signupForm = getSignupForm();
+    
+    
+
+    try {
+      console.log('SignUpData= ', signupForm);
+
+      const response = await axios.post('http://localhost:4000/api/signup',signupForm);
+      const result = await response.json();
+      if (response.ok) {
+        alert('SignUp Form submitted successfully!');
+       
+      } else {
+        alert('Failed to submit form: ' + result.message);
+      }
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('An error occurred while submitting the form.');
+    }
   };
 
   return (
@@ -35,8 +53,8 @@ function SignupForm() {
               <input
                 type="text"
                 name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
                 className="w-full p-2 border border-[var(--Teal,#378BA6)] rounded-lg focus:outline-none focus:border-[var(--Teal,#378BA6)]"
                 placeholder="Text"
                 required
@@ -47,8 +65,8 @@ function SignupForm() {
               <input
                 type="text"
                 name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
                 className="w-full p-2 border border-[var(--Teal,#378BA6)] rounded-lg focus:outline-none focus:border-[var(--Teal,#378BA6)]"
                 placeholder="Text"
                 required
@@ -60,8 +78,8 @@ function SignupForm() {
             <input
               type="email"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full p-2 border border-[var(--Teal,#378BA6)] rounded-lg focus:outline-none focus:border-[var(--Teal,#378BA6)]"
               placeholder="Email"
               required
@@ -72,8 +90,8 @@ function SignupForm() {
             <input
               type="tel"
               name="mobileNumber"
-              value={formData.mobileNumber}
-              onChange={handleChange}
+              value={mobileNumber}
+              onChange={(e) => setMobileNumber(e.target.value)}
               className="w-full p-2 border border-[var(--Teal,#378BA6)] rounded-lg focus:outline-none focus:border-[var(--Teal,#378BA6)]"
               placeholder="Mobile No"
               required
@@ -84,29 +102,31 @@ function SignupForm() {
               <label className="flex w-[192px] h-[20px] flex-col justify-center text-[var(--Teal,#378BA6)] text-base font-medium leading-[20.8px] tracking-[0.08px] font-jost">Join as *</label>
               <select
                 name="joinAs"
-                value={formData.joinAs}
-                onChange={handleChange}
+                value={joinAs}
+                onChange={(e) => setJoinAs(e.target.value)}
                 className="w-full p-2 border border-[var(--Teal,#378BA6)] rounded-lg text-[#A4A4A4] text-base font-normal leading-[20.8px] tracking-[0.08px] font-jost"
                 required
               >
-                <option value="">Select</option>
-                <option value="student">Student</option>
-                <option value="professional">Professional</option>
+                <option/>
+                <option value="recruiter">recruiter</option>
+                <option value="client">client</option>
+                <option value="admin">admin</option>
               </select>
             </div>
             <div>
               <label className="flex w-[192px] h-[20px] flex-col justify-center text-[var(--Teal,#378BA6)] text-base font-medium leading-[20.8px] tracking-[0.08px] font-jost">Location *</label>
               <select
                 name="location"
-                value={formData.location}
-                onChange={handleChange}
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
                 className="w-full p-2 border border-[var(--Teal,#378BA6)] rounded-lg text-[#A4A4A4] text-base font-normal leading-[20.8px] tracking-[0.08px] font-jost"
                 required
+                defaultValue={"Select"}
               >
-                <option value="">Select</option>
-                <option value="newYork">New York</option>
-                <option value="losAngeles">Los Angeles</option>
-                <option value="chicago">Chicago</option>
+                <option/>
+                <option value="New York">New York</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Chicago">Chicago</option>
               </select>
             </div>
           </div>
@@ -115,8 +135,8 @@ function SignupForm() {
             <input
               type="password"
               name="password"
-              value={formData.password}
-              onChange={handleChange}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full p-2 border border-[var(--Teal,#378BA6)] rounded-lg mb-3 focus:outline-none focus:border-[var(--Teal,#378BA6)]"
               placeholder="********"
               required
@@ -128,14 +148,14 @@ function SignupForm() {
             </p>
           </div>
           <div className="mt-6">
-            <a
+            <button
               type="submit"
-              href="/otp"
+              // href=""
               className="w-full py-3 text-white mb-4 flex h-[52px] px-[12px]  justify-center items-center gap-[8px] self-stretch rounded-[8px] bg-[var(--Teal,#378BA6)]"
             >
                 <span class="text-white text-center font-jost text-[24px] font-semibold leading-[116.667%]">Submit</span>
               
-            </a>
+            </button>
           </div>
         </form>
         <div className="mt-4 text-center">

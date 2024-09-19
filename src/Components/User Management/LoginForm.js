@@ -10,13 +10,21 @@ const LoginForm = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState('');
   const [passwordVisible, setPasswordVisible] = useState(false);
-
   const navigate = useNavigate();
+
+  const getSignupForm = () => {
+    return {
+      emailOrPhone, password
+    };
+  };
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    const LoginForm = getSignupForm();
+
     try {
-      const response = await axios.post('/Signin', {
+      const response = await axios.post('http://localhost:4000/api/signin', {
         email: emailOrPhone,
         password,
       }, {
