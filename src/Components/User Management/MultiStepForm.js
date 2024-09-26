@@ -58,7 +58,7 @@ const MultiStepForm = () => {
     
     // const result = await response.json()
 
-    if (response.status == 201) {
+    if (response.status === 201) {
       alert ('Multiform Submitted Successfully!');
     }
 
