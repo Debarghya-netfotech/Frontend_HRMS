@@ -6,7 +6,7 @@ function LockForMeModal({ id, onClose }) {
   const [isChecked, setIsChecked] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const useNavigate = useNavigate();
+  const Navigate = useNavigate();
 
   const handleConfirm = async () => {
     if (isChecked) {

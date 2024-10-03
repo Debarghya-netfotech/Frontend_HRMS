@@ -5,9 +5,11 @@ import JDList from '../../Recruiter/JD/JDList.js';
 import JobFilters from '../../Recruiter/JD/JobFilters.js';
 import Yearly from './Yearly.js';
 import Sidebar from '../../global/Sidebar.js'
+
 // import JobCard from '../JD/JobCard';
 
 function Dashboard() {
+
   const [activeTab, setActiveTab] = useState('Terms'); // Fix useState usage
   
   const renderTabContent = () => {
@@ -57,7 +59,7 @@ function Dashboard() {
         <div className="flex items-center justify-between w-[100%] p- bg-white">
 
           <div className="text-[#4F4F4F] font-jost text-[24px] font-semibold leading-[28px]">
-            New JD’s
+            New JD's
           </div>
           <button className='flex h-[52px] p-[8px_12px] justify-center items-center gap-[8px] rounded-lg bg-[#A4A4A4]'><h1 className='text-white-custom text-center font-jost text-18px font-semibold leading-28px text-white'>See More</h1></button>
         </div>

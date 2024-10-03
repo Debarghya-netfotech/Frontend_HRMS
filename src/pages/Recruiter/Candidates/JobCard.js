@@ -14,7 +14,11 @@ const JobCard = ({ job }) => {
           <p className="text-sm text-gray-500">{job.clientName}</p>
           <p className="text-xs text-gray-400">{job.deadline}</p>
         </div>
-        <div className={`flex items-center text-sm rounded-full py-1 px-3 ${job.status === 'Closed' ? 'bg-red-100 text-red-600' : job.status === 'Rework: Open' ? 'bg-blue-100 text-blue-600' : 'bg-yellow-100 text-yellow-600'}`}>
+        <div className={`flex items-center text-sm rounded-full py-1 px-3 ${
+          job.status === 'Open' ? 'bg-[#DBF0CA] text-[#477C1D]'
+          : job.status === 'Closed' ? 'bg-[var(--Primary-Orange,#ECB015)] text-white' 
+          : job.status === 'Rework' ? 'bg-[#D2EAF2] text-[#115469]' 
+          : 'bg-[#FFFB9A] text-[#A38740]'}`}>
           {job.status}
         </div>
       </div>

@@ -63,4 +63,4 @@ function SelectFromJD() {
   )
 }
 
-export default SelectFromJD
+export default SelectFromJD;

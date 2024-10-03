@@ -18,11 +18,11 @@ const JobDetails = ({ job }) => {
 
   return (
     <div className="p-4 border border-[var(--Teal,#378BA6)] rounded-md w-full max-w-md mx-auto">
-      <p className="flex w-32 items-center justify-center px-2 py-1 mb-2 bg-gray-200 text-gray-700 rounded text-center text-sm font-normal leading-[18.2px] tracking-[0.07px]">JD ID: {job.id}</p>
+      <p className="flex max-w-max items-center justify-center px-2 py-1 mb-1 bg-gray-200 text-gray-700 rounded text-center text-sm font-normal leading-[18.2px] tracking-[0.07px]">JD ID: {job.id}</p>
 
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h2 className="flex flex-col justify-center h-[24px] overflow-hidden text-[#303030] truncate whitespace-nowrap font-jost text-[24px] font-bold leading-[24px]">{job.title}</h2>
+          <h2 className="flex flex-col justify-center h-[24px] overflow-hidden text-[#303030] truncate whitespace-nowrap font-jost text-[24px] font-bold leading-[24px]">{job.job_title}</h2>
           <p className="flex flex-col justify-center h-[20.809px] overflow-hidden text-[#378BA6] truncate whitespace-nowrap font-jost text-[20px] my-2 font- leading-[28px]">Company: {job.company}</p>
         </div>
 
@@ -30,10 +30,12 @@ const JobDetails = ({ job }) => {
       <div className="flex flex-row justify-between">
       <a href='/LockModal' ><button className="flex justify-center items-center gap-[8px] h-[35.347px] p-[8px_12px] rounded-[8px] bg-[#378BA6] text-white text-center font-jost text-[24px] font-semibold leading-[28px] focus:bg-[#A4A4A4]">  Lock for me <img src={lockIcon} alt='lockIcon' /> </button></a>
         <p className="text-black font-jost text-sm font-semibold leading-9" >
-          Status: <span className={` w-[75px] h-[14px] px-3 py-2 flex-col justify-center rounded-md text-center font-jost text-base font-normal leading-[28px] ${job.status === 'Open' ? 'bg-[#DBF0CA] text-[#477C1D]'
-            : job.status === 'Closed' ? 'bg-[#FFC738] text-white'
-              : job.status === 'Rework' ? 'bg-[#D2EAF2] text-[#115469] text-'
-                : ''}`}>{job.status}</span>
+          Status: <span className={` w-[75px] h-[14px] px-3 py-2 flex-col justify-center rounded-md text-center font-jost text-base font-normal leading-[28px] 
+          ${
+            job.status === 'Open' ? 'bg-[#DBF0CA] text-[#477C1D]'
+            : job.status === 'Closed' ? 'bg-[var(--Primary-Orange,#ECB015)] text-white' 
+            : job.status === 'Rework' ? 'bg-[#D2EAF2] text-[#115469]' 
+            : 'bg-[#FFFB9A] text-[#A38740]'}`}>{job.status}</span>
         </p>
       </div>
 
@@ -75,19 +77,19 @@ const JobDetails = ({ job }) => {
               <li className='flex gap-2 my-1 text-[#4F4F4F] font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]'><img src={PriorityIcon} alt='Priority' /><>Priority:</> {job.priority}</li>
               <li className='flex gap-2 my-1 text-[#4F4F4F] font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]'><img src={SubmissionIcon} alt='Submission' /><>No. of Submissions Required:</> {job.submissionsRequired}</li>
               <li className='flex gap-2 my-1 text-[#4F4F4F] font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]'><img src={TimeIcon} alt='Time' /><>Uploaded on:</> {job.uploadedOn}</li>
-              <li className='flex gap-2 my-1 text-[#4F4F4F] font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]'><img src={TimeIcon} alt='Time' /><>Delivery Required:</> {job.deliveryRequired}</li>
+              <li className='flex gap-2 my-1 text-[#4F4F4F] font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]'><img src={TimeIcon} alt='Time' /><>Delivery Required:</> {job.delivery_deadline}</li>
               <li className='flex gap-2 my-1 text-[#4F4F4F] font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]'><img src={TimeIcon} alt='Time' /><>Replacement Period:</> {job.replacementPeriod}</li>
             </ul>
           </div>
 
           <div className="bg-gray-100 p-3 rounded-md">
             <h3 className="flex items-center self-stretch p-[6px_12px] rounded-[4px] bg-[#C3DCE4] text-[#115469] text-center font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]">Skills Required</h3>
-            <p className="flex gap-2 my-1 text-[#4F4F4F] font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]">{job.skills}</p>
+            <p className="flex gap-2 my-1 text-[#4F4F4F] font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]">{job.skills_required}</p>
           </div>
 
           <div className="bg-gray-100 p-3 rounded-md">
             <h3 className="flex items-center self-stretch p-[6px_12px] rounded-[4px] bg-[#C3DCE4] text-[#115469] text-center font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]">Additional Comments</h3>
-            <p className="flex gap-2 my-1 text-[#4F4F4F] font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]">{job.comments}</p>
+            <p className="flex gap-2 my-1 text-[#4F4F4F] font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]">{job.additional_comments}</p>
           </div>
         </div>
       )}
@@ -101,13 +103,13 @@ const JobDetails = ({ job }) => {
                 Your Payout
               </div>
               <div className="p-2 border-b border-gray-400 text-[#4F4F4F] text-center font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]">
-                1500/-
+                {job.delivery_payout}
               </div>
               <div className="bg-[#EAF1F3] p-2 border-r border-gray-400 text-gray-700 text-center font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]">
                 Absolute value
               </div>
               <div className="p-2 border-gray-400 text-[#4F4F4F] text-center font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]">
-                1500/-
+                {job.absolute_payout}
               </div>
             </div>
           </div>

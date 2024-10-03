@@ -33,17 +33,17 @@ const Sidebar = () => {
 
       {/* Navigation */}
       <nav className="flex flex-col flex-grow mt-10">
-        <NavItem to="/" icon={<FaHome />} label="Dashboard" isOpen={isOpen} />
+        <NavItem to="/Dashboard" icon={<FaHome />} label="Dashboard" isOpen={isOpen} />
         <DropdownNavItem
-          to="/jd-lists"
+          to="/JDList"
           icon={<FaDatabase />}
           label="JD Lists"
           isOpen={isOpen}
           openDropdown={openDropdown}
           onDropdownToggle={() => handleDropdownToggle('JD Lists')}
         >
-          <DropdownItem to="/jd-lists/recent" label="Recent JD" />
-          <DropdownItem to="/jd-lists/archive" label="Archive JD" />
+          <DropdownItem to="/JDList" label="Recent JD" />
+          <DropdownItem to="/JDList" label="Archive JD" />
         </DropdownNavItem>
         <DropdownNavItem
           to="/workplace"
@@ -56,7 +56,7 @@ const Sidebar = () => {
           <DropdownItem to="/workplace/team" label="Team" />
           <DropdownItem to="/workplace/tasks" label="Tasks" />
         </DropdownNavItem>
-        <NavItem to="/candidate-database" icon={<FaComments />} label="Candidate Database" isOpen={isOpen} />
+        <NavItem to="/CandidatesOne" icon={<FaComments />} label="Candidate Database" isOpen={isOpen} />
         <NavItem to="/chat-support" icon={<FaMoneyBill />} label="Chat Support" isOpen={isOpen} />
         <NavItem to="/finances" icon={<FaCog />} label="Finances" isOpen={isOpen} />
         <NavItem to="/Profile" icon={<FaInfoCircle />} label="Profile" isOpen={isOpen} />

@@ -71,11 +71,11 @@ const CandidateForm = () => {
 
   // Handlers for adding new experience and education
   const addExperience = () => {
-    setExperiences([...experiences, { jobTitle: '', companyName: '', startDate: '', endDate: '' }]);
+    setExperiences([...experiences, { Job_title: '', Company_name: '', Start_date: '', End_date: '', Is_current_education: '' }]);
   };
 
   const addEducation = () => {
-    setEducations([...educations, { fieldOfStudy: '', levelOfEducation: '', startDate: '', endDate: '' }]);
+    setEducations([...educations, { Degree: '', Field_of_study: '', start_date: '', end_date: '', Is_current_education: '' }]);
   };
 
   // Handlers for updating experience and education fields
@@ -121,9 +121,9 @@ const CandidateForm = () => {
               <div className="px-4 py-4 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
                   <label className=' mb-2 w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'> First Name *</label>
-                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]" 
-                  type="text"
-                   placeholder="First Name"
+                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
+                    type="text"
+                    placeholder="First Name"
                     value={formData.First_name}
                     onChange={(e) => setFormData({ ...formData, First_name: e.target.value })}
                   />
@@ -131,8 +131,8 @@ const CandidateForm = () => {
                 <div>
                   <label className='mb-2 w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'>Last Name *</label>
                   <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
-                   type="text" 
-                   placeholder="Last Name"
+                    type="text"
+                    placeholder="Last Name"
                     value={formData.Last_name}
                     onChange={(e) => setFormData({ ...formData, Last_name: e.target.value })}
                   />
@@ -140,9 +140,9 @@ const CandidateForm = () => {
                 <div>
                   <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'>Current Location *</label>
                   <select className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
-                  placeholder="Current Location"
-                  value={formData.Current_location}
-                  onChange={(e) => setFormData({ ...formData, Current_location: e.target.value })}
+                    placeholder="Current Location"
+                    value={formData.Current_location}
+                    onChange={(e) => setFormData({ ...formData, Current_location: e.target.value })}
                   >
                     <option />
                     <option value='Kolkata'>Kolkata</option>
@@ -153,21 +153,21 @@ const CandidateForm = () => {
                 </div>
                 <div>
                   <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'>Email ID *</label>
-                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]" 
-                  type="text" 
-                  placeholder="Email ID"
-                  value={formData.Email}
-                  onChange={(e) => setFormData({ ...formData, Email: e.target.value })}
+                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
+                    type="text"
+                    placeholder="Email ID"
+                    value={formData.Email}
+                    onChange={(e) => setFormData({ ...formData, Email: e.target.value })}
                   />
 
                 </div>
                 <div>
                   <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'>Contact Number *</label>
-                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]" 
-                  type="number" 
-                  placeholder="Contact Number"
-                  value={formData.Contact_number}
-                  onChange={(e) => setFormData({ ...formData, Contact_number: e.target.value })}
+                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
+                    type="number"
+                    placeholder="Contact Number"
+                    value={formData.Contact_number}
+                    onChange={(e) => setFormData({ ...formData, Contact_number: e.target.value })}
                   />
                 </div>
               </div>
@@ -330,43 +330,43 @@ const CandidateForm = () => {
               <div className="px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
                   <label className='mb-2 w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-medium leading-[130%] tracking-[0.08px]'>Current Salary *</label>
-                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]" 
-                  type="Number" 
-                  placeholder="Current Salary"
-                  value={formData.Current_salary}
-                  onChange={(e) => setFormData({ ...formData, Current_salary: e.target.value })}
+                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
+                    type="Number"
+                    placeholder="Current Salary"
+                    value={formData.Current_salary}
+                    onChange={(e) => setFormData({ ...formData, Current_salary: e.target.value })}
                   />
                 </div>
                 <div>
                   <label className='mb-2 w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-medium leading-[130%] tracking-[0.08px]'>Expected Salary *</label>
-                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]" 
-                  type="Number" 
-                  placeholder="Expected Salary " 
-                  value={formData.Expected_salary}
-                  onChange={(e) => setFormData({ ...formData, Expected_salary: e.target.value })}/>
-                  
+                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
+                    type="Number"
+                    placeholder="Expected Salary "
+                    value={formData.Expected_salary}
+                    onChange={(e) => setFormData({ ...formData, Expected_salary: e.target.value })} />
+
                 </div>
                 <div>
                   <label className='mb-2 w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-medium leading-[130%] tracking-[0.08px]'>Reason for change*</label>
-                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]" 
-                  type="text" 
-                  placeholder="Reason for change" 
-                  value={formData.Reason_for_change}
-                  onChange={(e) => setFormData({ ...formData, Reason_for_change: e.target.value })}/>
-                  
+                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
+                    type="text"
+                    placeholder="Reason for change"
+                    value={formData.Reason_for_change}
+                    onChange={(e) => setFormData({ ...formData, Reason_for_change: e.target.value })} />
+
                 </div>
                 <div>
                   <label className='mb-2 w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-medium leading-[130%] tracking-[0.08px]'>Notice Period*</label>
-                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]" 
-                  type="Number" 
-                  placeholder="Notice Period" 
-                  value={formData.Notice_period}
-                  onChange={(e) => setFormData({ ...formData, Notice_period: e.target.value })}/>
-                  
+                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
+                    type="Number"
+                    placeholder="Notice Period"
+                    value={formData.Notice_period}
+                    onChange={(e) => setFormData({ ...formData, Notice_period: e.target.value })} />
+
                 </div>
                 <label className='mb-2 w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-medium leading-[130%] tracking-[0.08px]'>Availability for Interview*
-                    <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]" 
-                    type="date" 
+                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
+                    type="date"
                     placeholder="Date"
                     value={formData.availabilityDate}
                     onChange={(e) => setFormData({ ...formData, availabilityDate: e.target.value })} />
@@ -387,12 +387,12 @@ const CandidateForm = () => {
                 <div>
                   <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-medium leading-[130%] tracking-[0.08px]'>Upload Website Link if Applicable</label>
                   <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]" type="text" placeholder="Website Link"
-                  value={formData.Linkedin}
-                  onChange={(e) => setFormData({ ...formData, Linkedin: e.target.value })} />
+                    value={formData.Linkedin}
+                    onChange={(e) => setFormData({ ...formData, Linkedin: e.target.value })} />
                 </div>
                 <textarea className=" p-2 mt-4 w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]" placeholder="Remarks"
-                value={formData.Remarks}
-                onChange={(e) => setFormData({ ...formData, Remarks: e.target.value })}
+                  value={formData.Remarks}
+                  onChange={(e) => setFormData({ ...formData, Remarks: e.target.value })}
                 />
               </div>
 
