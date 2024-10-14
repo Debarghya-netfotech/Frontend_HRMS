@@ -4,12 +4,23 @@ import JobList from './JobList';
 import JobDetails from './JobDetails';
 import LockForMeModal from './LockForMeModal';
 import Sidebar from '../../global/Sidebar';
+import JobFilters from './JobFilters';
 
 const JDList = ({ limit = Infinity }) => {
   const [selectedJob, setSelectedJob] = useState(null); 
   const [jobs, setJobs] = useState([]); 
   const [showModal, setShowModal] = useState(false); 
-
+  const [searchQuery, setSearchQuery] = useState('');  // New search state
+  const [filters, setFilters] = useState({
+    location: '',
+    industry: '',
+    title: '',
+    status: '',
+    uniqueLocations: [],
+    uniqueIndustries: [],
+    uniqueTitles: [],
+    uniqueStatuses: []
+  });
 
   useEffect(() => {
     getBackendData();
@@ -38,31 +49,41 @@ const JDList = ({ limit = Infinity }) => {
         replacementPeriod: job.replacement_period,
         no_of_vacancy: job.no_of_vacancy,
         absoluteValue: job.absolute_payout,
-        delivery_payout:job.delivery_payout,
-        additional_comments:job.additional_comments,
+        delivery_payout: job.delivery_payout,
+        additional_comments: job.additional_comments,
         skills_required: job.skills_required,
-        jd_status:job.jd_status,
+        jd_status: job.jd_status,
         uploadedOn: new Date(job.createdAt).toLocaleDateString(),
-        // replacementPeriod: job.replacement_period,
-        
         comments: job.remarks,
         status: job.jd_status,
-        // payout: job.payout,
-        // absoluteValue: job.payout,
         signUpRate: job.sign_up_rate,
         paymentTerms: [job.payment_terms],
         importantNotes: [job.remarks],
       }));
 
       setJobs(formattedJobs.slice(0, limit));
-      
+
+      // Extract unique values for filters
+      const uniqueLocations = [...new Set(formattedJobs.map(job => job.location))];
+      const uniqueIndustries = [...new Set(formattedJobs.map(job => job.industry))];
+      const uniqueTitles = [...new Set(formattedJobs.map(job => job.job_title))];
+      const uniqueStatuses = [...new Set(formattedJobs.map(job => job.status))];
+
+      setFilters(prev => ({
+        ...prev,
+        uniqueLocations,
+        uniqueIndustries,
+        uniqueTitles,
+        uniqueStatuses
+      }));
+
     } catch (error) {
       console.error('Error fetching data from backend:', error);
     }
   };
 
   const handleJobClick = (job) => {
-    console.log('Job clicked:', job); // Add this line to debug
+    console.log('Job clicked:', job); 
     setSelectedJob(job);
     setShowModal(true); // Show the modal when a job is clicked
   };
@@ -72,23 +93,75 @@ const JDList = ({ limit = Infinity }) => {
     setSelectedJob(null); // Reset selected job when modal is closed
   };
 
+  // Reset all filters and search query
+  const resetFilters = () => {
+    setSearchQuery(''); // Reset search query
+    setFilters({
+      location: '',
+      industry: '',
+      title: '',
+      status: '',
+      uniqueLocations: filters.uniqueLocations,
+      uniqueIndustries: filters.uniqueIndustries,
+      uniqueTitles: filters.uniqueTitles,
+      uniqueStatuses: filters.uniqueStatuses,
+    });
+  };
+
+  // Combine search query filtering with the existing filters
+  const filteredJobs = jobs.filter((job) => {
+    const matchesSearch = job.job_title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          job.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          job.location.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    const matchesFilters = (filters.location === '' || job.location === filters.location) &&
+                           (filters.industry === '' || job.industry === filters.industry) &&
+                           (filters.title === '' || job.job_title === filters.title) &&
+                           (filters.status === '' || job.status === filters.status);
+    
+    return matchesSearch && matchesFilters;
+  });
+
   return (
     <div className='min-h-screen flex flex-row gap-4'>
-    <Sidebar className='max-[30%]'/>
-    <div className="min-h-screen max-w-8xl bg-white p-4 gap-4 flex items-start">
-      <div className="w-full">
-        <JobList jobs={jobs} onJobClick={handleJobClick} />
+      <Sidebar className='max-[30%]'/>
+      <div className="min-h-screen max-w-8xl bg-white p-4 gap-4 flex items-start">
+        <div className="w-full">
+          {/* Search Input */}
+          <div className="mb-4">
+            <input
+              type="text"
+              placeholder="Search by title, company, or location"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded-md"
+            />
+          </div>
+
+          <JobFilters filters={filters} setFilters={setFilters} />
+
+          {/* Cancel All Filters Button */}
+          <div className="mb-4">
+            <button
+              onClick={resetFilters}
+              className="px-4 py-2 bg-red-500 text-white rounded-md"
+            >
+              Cancel All Filters
+            </button>
+          </div>
+
+          <JobList jobs={filteredJobs} onJobClick={handleJobClick} />
+        </div>
+        <div className="w-2/5">
+          <JobDetails job={selectedJob} />
+        </div>
+        {showModal && selectedJob && (
+          <LockForMeModal
+            id={selectedJob.id}
+            onClose={handleModalClose}
+          />
+        )}
       </div>
-      <div className="w-2/5">
-        <JobDetails job={selectedJob} />
-      </div>
-      {showModal && selectedJob && (
-        <LockForMeModal
-          id={selectedJob.id}
-          onClose={handleModalClose}
-        />
-      )}
-    </div>
     </div>
   );
 };

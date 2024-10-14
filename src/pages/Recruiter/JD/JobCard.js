@@ -33,7 +33,7 @@ const JobCard = ({ job, onClick }) => {
               </div>
               <div className="flex ">
                 <img src={JobTypeIcon} alt='JobTypeIcon' />
-                <span className='ml-2 font-jost'>Type: {job.type}</span>
+                <span className='ml-2 font-jost'>Type: {job.job_type}</span>
               </div>
               <div className="flex ">
                 <img src={SalaryIcon} alt='SalaryIcon' />
