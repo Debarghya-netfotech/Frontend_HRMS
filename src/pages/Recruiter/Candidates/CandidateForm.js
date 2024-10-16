@@ -13,6 +13,8 @@ const CandidateForm = () => {
     Current_location: '',
     Current_salary: '',
     Expected_salary: '',
+    Job_Title: '',
+    experiences: '',
     Reason_for_change: '',
     Notice_period: '',
     availabilityDate: '',
@@ -125,7 +127,7 @@ const CandidateForm = () => {
               <p className="flex items-center self-stretch rounded-[4px] bg-[#C3DCE4] px-3 py-2 text-[#115469] -text text-center font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px] p-1.5">PERSONAL DETAILS</p>
               <div className="px-4 py-4 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                  <label className=' mb-2 w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'> First Name *</label>
+                  <label className=' w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'> First Name *</label>
                   <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
                     type="text"
                     placeholder="First Name"
@@ -134,7 +136,7 @@ const CandidateForm = () => {
                   />
                 </div>
                 <div>
-                  <label className='mb-2 w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'>Last Name *</label>
+                  <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'>Last Name *</label>
                   <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
                     type="text"
                     placeholder="Last Name"
@@ -175,6 +177,15 @@ const CandidateForm = () => {
                     onChange={(e) => setFormData({ ...formData, Contact_number: e.target.value })}
                   />
                 </div>
+                <div>
+                  <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'>Job Title *</label>
+                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
+                    type="text"
+                    placeholder="Job Title"
+                    value={formData.Job_Title}
+                    onChange={(e) => setFormData({ ...formData, Job_Title: e.target.value })}
+                  />
+                </div>
               </div>
             </div>
             <hr />
@@ -189,7 +200,7 @@ const CandidateForm = () => {
                     <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-medium leading-[130%] tracking-[0.08px]'> Job Title *</label>
                     <input
                       type="text"
-                      value={experience.Job_title}
+                      value={experience.Job_Title}
                       onChange={(e) => updateExperience(index, 'Job_title', e.target.value)}
                       placeholder="Job Title"
                       className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
@@ -334,7 +345,7 @@ const CandidateForm = () => {
               <h4 className="flex items-center self-stretch rounded-[4px] bg-[#C3DCE4] px-3 py-2 text-[#115469] -text text-center font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px] p-1.5">OTHER DETAILS</h4>
               <div className="px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                  <label className='mb-2 w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-medium leading-[130%] tracking-[0.08px]'>Current Salary *</label>
+                  <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'>Current Salary *</label>
                   <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
                     type="text"
                     placeholder="Current Salary"
@@ -343,7 +354,7 @@ const CandidateForm = () => {
                   />
                 </div>
                 <div>
-                  <label className='mb-2 w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-medium leading-[130%] tracking-[0.08px]'>Expected Salary *</label>
+                  <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'>Expected Salary *</label>
                   <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
                     type="text"
                     placeholder="Expected Salary "
@@ -351,7 +362,7 @@ const CandidateForm = () => {
                     onChange={(e) => setFormData({ ...formData, Expected_salary: e.target.value })} />
                 </div>
                 <div>
-                  <label className='mb-2 w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-medium leading-[130%] tracking-[0.08px]'>Reason for change*</label>
+                  <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'>Reason for change*</label>
                   <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
                     type="text"
                     placeholder="Reason for change"
@@ -360,20 +371,43 @@ const CandidateForm = () => {
 
                 </div>
                 <div>
-                  <label className='mb-2 w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-medium leading-[130%] tracking-[0.08px]'>Notice Period*</label>
-                  <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
-                    type="text"
+                  <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'>Notice Period*</label>
+                  <select className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
                     placeholder="Notice Period"
                     value={formData.Notice_period}
-                    onChange={(e) => setFormData({ ...formData, Notice_period: e.target.value })} />
-
+                    onChange={(e) => setFormData({ ...formData, Notice_period: e.target.value })}
+                  >
+                    <option />
+                    <option value='15 days'>15 days</option>
+                    <option value='1 Month'>1 Month</option>
+                    <option value='2 Month'>2 Month</option>
+                    <option value='3 Month'>3 Month</option>
+                  </select>
                 </div>
-                <label className='mb-2 w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-medium leading-[130%] tracking-[0.08px]'>Availability for Interview *</label>
+                <div>
+                  <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'>Total Experience*</label>
+                  <select className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
+                    placeholder="Experience"
+                    value={formData.Total_Experiences}
+                    onChange={(e) => setFormData({ ...formData, Total_Experiences: e.target.value })}
+                  >
+                    <option />
+                    <option value='fresher'>Fresher</option>
+                    <option value='1-3 Years'>1-3 Years</option>
+                    <option value='3-5 Years'>3-5 Years</option>
+                    <option value='5-8 Years'>5-8 Years</option>
+                    <option value='8-12 Years'>8-12 Years</option>
+                    <option value='12+ Years'>12+ Years</option>
+                  </select>
+                </div>
+                <div>
+                <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'>Availability for Interview *</label>
                   <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]"
                     type="date"
                     placeholder="Date"
                     value={formData.availabilityDate}
                     onChange={(e) => setFormData({ ...formData, availabilityDate: e.target.value })} />
+                    </div>
               </div>
             </div>
 
@@ -388,7 +422,7 @@ const CandidateForm = () => {
                   <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]" type="file" placeholder="Resume/CV" />
                 </div> */}
                 <div>
-                  <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-medium leading-[130%] tracking-[0.08px]'>Upload Website Link if Applicable</label>
+                  <label className='w-full flex flex-col justify-center h-[20px] text-[var(--Teal,#378BA6)] font-jost text-[16px] font-bold leading-[130%] tracking-[0.08px]'>Upload Website Link if Applicable</label>
                   <input className="w-full border border-[var(--Teal,#378BA6)] rounded-lg px-4 py-2 focus:outline-none focus:border-[var(--Teal,#378BA6)] text-[var(--Teal,#378BA6)]" type="text" placeholder="Website Link"
                     value={formData.Linkedin}
                     onChange={(e) => setFormData({ ...formData, Linkedin: e.target.value })} />

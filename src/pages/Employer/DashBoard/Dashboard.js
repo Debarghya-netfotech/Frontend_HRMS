@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import WeeklyDashboard from '../../Recruiter/Dashboard/WeeklyDashboard';
 import MonthlyDashboard from '../../Recruiter/Dashboard/MonthlyDashboard';
-import JobFilters from '../../Recruiter/JD/JobFilters.js';
+// import JobFilters from '../../Recruiter/JD/JobFilters.js';
 import Yearly from '../../Recruiter/Dashboard/Yearly';
 import Sidebar from '../../global/Sidebar.js'
 import JobCard from './JobCard.js';

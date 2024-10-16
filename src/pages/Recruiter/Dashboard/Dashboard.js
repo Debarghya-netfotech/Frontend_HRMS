@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import WeeklyDashboard from './WeeklyDashboard.js';
 import MonthlyDashboard from './MonthlyDashboard.js';
 import JDList from '../../Recruiter/JD/JDList.js';
-import JobFilters from '../../Recruiter/JD/JobFilters.js';
+// import JobFilters from '../../Recruiter/JD/JobFilters.js';
 import Yearly from './Yearly.js';
 import Sidebar from '../../global/Sidebar.js'
 
@@ -29,7 +29,7 @@ function Dashboard() {
     <div className='min-h-screen flex flex-row gap-4'>
     <Sidebar className='max-[30%] '/>
     <div className="max-w-7xl  mt-10">
-      <JobFilters/>
+      {/* <JobFilters/> */}
       {/* Tabs Section */}
       <div className="flex space-x-1 text-[var(--Teal,#378BA6)] text-center text-[18px] font-normal leading-[36px] ">
         <button

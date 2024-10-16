@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
 import axios from 'axios';
-import JobFilters from '../../Recruiter/JD/JobFilters';
+// import JobFilters from '../../Recruiter/JD/JobFilters';
 import ExportIcon from '../../../Images/ExportIcon.png';
 import Chat from '../../../Images/ChatIcon.png';
  
 function SelectFromJD() {
+  const location = useLocation(); // Get location
+  const candidate = location.state?.candidate; // Extract candidate data from state
   const [lockedJobDetails, setLockedJobDetails] = useState([]); // State for locked job details
+  const [selectedJDs, setSelectedJDs] = useState([]); // State for selected JDs
   const [errorMessage, setErrorMessage] = useState(''); // State to store error message
+  const navigate = useNavigate(); // Navigation hook
  
   // Function to get job details
   const getJobDetails = async () => {
@@ -24,14 +29,10 @@ function SelectFromJD() {
       try {
         const jobDetails = await getJobDetails(); // Call the new function
  
-        // Log the full response to see the structure
-        console.log('Full API Response:', jobDetails);
- 
         // Filter to only get locked JDs
         const lockedJDs = jobDetails.filter(jd => jd.locked === true);
- 
-        console.log('Locked JDs:', lockedJDs);
         setLockedJobDetails(lockedJDs);
+        console.log(lockedJDs);
       } catch (error) {
         console.error('Error fetching job details:', error);
         setErrorMessage('Error fetching job details.');
@@ -39,19 +40,46 @@ function SelectFromJD() {
     };
  
     fetchJobDetails();
-  }, []);
+ 
+    // Log candidate details to console
+    if (candidate) {
+      console.log('Candidate Data:', candidate);
+    }
+  }, [candidate]);
+ 
+  // Handle checkbox selection
+  const handleCheckboxChange = (jd) => {
+    setSelectedJDs((prevSelectedJDs) => {
+      if (prevSelectedJDs.includes(jd)) {
+        return prevSelectedJDs.filter(selectedJD => selectedJD !== jd); // Deselect if already selected
+      } else {
+        return [...prevSelectedJDs, jd]; // Add to selected if not selected
+      }
+    });
+  };
+ 
+  // Handle "Done" button click
+  const handleDoneClick = () => {
+    // Check if any JD is selected
+    if (selectedJDs.length > 0 && candidate) {
+      // Navigate to the FinanceCandidate page and pass selected JDs and candidate data
+      navigate('/FinanceCandidate', { state: { candidate, selectedJDs } });
+    } else {
+      alert('Please select at least one JD and a candidate.');
+    }
+  };
  
   return (
     <div className='max-h-screen gap-6 p-4 bg-[#EAF1F4] flex flex-col items-center'>
       <div className='flex flex-col w-[1156px] py-8 px-0 items-end gap-6'>
         <div className='w-full'>
-          <JobFilters />
+          {/* <JobFilters /> */}
         </div>
         <div className='flex justify-end items-center gap-3 self-stretch'>
           <button className='flex p-2 px-3 justify-center items-center gap-2 self-stretch rounded-lg bg-[white] w-[244px] h-[52px]'>
             <h1 className='text-[bg-gray-400] text-center font-semibold text-2xl leading-7 font-jost'>Cancel</h1>
           </button>
-          <button className='flex p-2 px-3 justify-center items-center gap-2 self-stretch rounded-lg bg-gray-400 w-[244px] h-[52px]'>
+          <button onClick={handleDoneClick} className='flex p-2 px-3 justify-center items-center gap-2 self-stretch rounded-lg bg-gray-400 w-[244px] h-[52px]'>
             <h1 className='text-white text-center font-semibold text-2xl leading-7 font-jost'>Done</h1>
           </button>
         </div>
@@ -84,7 +112,11 @@ function SelectFromJD() {
                 </h1>
                
                 {/* Checkbox */}
-                <input type="checkbox" className="form-checkbox h-5 w-5 text-red-600" />
+                <input
+                  type="checkbox"
+                  className="form-checkbox h-5 w-5 text-blue-600"
+                  onChange={() => handleCheckboxChange(jd)} // Handle checkbox change
+                />
                
                 {/* JD ID */}
                 <div className='flex flex-row items-center'>
@@ -127,31 +159,22 @@ function SelectFromJD() {
  
                 {/* Date */}
                 <h1 className='text-[#4F4F4F] font-jost text-base font-normal leading-custom tracking-[0.08px]'>
-                  {jd.date}
+                  {jd.createdAt.split('T')[0]}
                 </h1>
  
-                {/* Payout */}
+                {/* Amount */}
                 <h1 className='text-[#4F4F4F] font-jost text-base font-normal leading-custom tracking-[0.08px]'>
-                  {jd.payout}
+                  ${jd.amount}
                 </h1>
  
                 {/* Status */}
-                <a href='/FinancePayroll'>
-                  <div className='flex flex-col w-[86px] p-[4px_12px] justify-center items-center gap-[10px] rounded-[12px] border'>
-                    <button className='flex h-[26px] justify-center items-center bg-[#ECB015]'>
-                      <h1 className='text-white text-center font-jost text-sm font-bold leading-[28px] w-full'>
-                        {jd.status === 'closed' ? 'Closed' : 'Open'}
-                      </h1>
-                    </button>
-                    <h1 className='text-gray-500 text-center font-sans text-base font-small leading-6 tracking-tight'>
-                      View
-                    </h1>
-                  </div>
-                </a>
+                <h1 className='text-[#4F4F4F] font-jost text-base font-normal leading-custom tracking-[0.08px]'>
+                  {jd.status}
+                </h1>
               </div>
             ))
           ) : (
-            <h1>No locked JDs available.</h1>
+            <h2 className='text-lg font-semibold'>No locked job descriptions available.</h2>
           )}
         </div>
       </div>
