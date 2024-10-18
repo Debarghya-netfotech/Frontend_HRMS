@@ -36,6 +36,7 @@ import JobCard from './pages/Employer/DashBoard/JobCard';
 import EmpDashboard from './pages/Employer/DashBoard/Dashboard';
 import EmpJDdetail from './pages/Employer/JDDetail/JDdetail';
 import AddNewJDForm from './pages/Employer/New JD/AddNewJDForm';
+import SelectCandidate from './pages/Recruiter/CandidatesDatabase/SelectCandidate';
 function App() {
   return (
     <>
@@ -76,6 +77,8 @@ function App() {
           <Route path='/EmployerDashboard' element={<EmpDashboard />} />
           <Route path='/EmpJDdetail' element={<EmpJDdetail />} />
           <Route path='/AddJDForm' element={<AddNewJDForm />} />
+          <Route path='/Employee-DashBoard' element={<EmpDashboard />} />
+          <Route path='/SelectCandidate' element={<SelectCandidate />} />
         </Routes>
       </BrowserRouter>
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import Sidebar from '../../global/Sidebar'
-import JobFilters from '../JD/JobFilters'
+// import JobFilters from '../JD/JobFilters'
 import ExportIcon from '../../../Images/ExportIcon.png'
 import Chat from '../../../Images/ChatIcon.png'
 function FinanceList() {
@@ -34,7 +34,7 @@ function FinanceList() {
             </div>
           </div>
         </div>
-        <div><JobFilters /></div>
+        {/* <div><JobFilters /></div> */}
         <div className='h-[52px] self-stretch rounded-[8px] bg-[rgba(55,139,166,0.30)] flex justify-between items-center p-8 mt-[20px] '>
           <h1 className='text-black text-center font-jost text-xl font-normal leading-9'>JD ID</h1>
           <h1 className='text-black text-center font-jost text-xl font-normal leading-9'>CLIENT DETAILS</h1>
