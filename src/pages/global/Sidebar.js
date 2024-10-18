@@ -53,7 +53,7 @@ const Sidebar = () => {
           openDropdown={openDropdown}
           onDropdownToggle={() => handleDropdownToggle('My Workplace')}
         >
-          <DropdownItem to="/workplace/team" label="Team" />
+          <DropdownItem to="/MyWorkspace" label="Team" />
           <DropdownItem to="/workplace/tasks" label="Tasks" />
         </DropdownNavItem>
         <NavItem to="/CandidatesOne" icon={<FaComments />} label="Candidate Database" isOpen={isOpen} />
