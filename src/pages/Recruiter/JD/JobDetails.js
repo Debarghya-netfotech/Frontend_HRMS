@@ -20,8 +20,9 @@ const JobDetails = ({ job }) => {
     <div className="p-4 border border-[var(--Teal,#378BA6)] rounded-md w-full max-w-md mx-auto">
       <p className="flex max-w-max items-center justify-center px-2 py-1 mb-1 bg-gray-200 text-gray-700 rounded text-center text-sm font-normal leading-[18.2px] tracking-[0.07px]">JD ID: {job.id}</p>
 
-      <div className="flex justify-between items-start mb-4">
-        <div>
+      <div >
+        
+        <div className="flex justify-between items-start mb-4">
           <h2 className="flex flex-col justify-center h-[24px] overflow-hidden text-[#303030] truncate whitespace-nowrap font-jost text-[24px] font-bold leading-[24px]">{job.job_title}</h2>
           <p className="flex flex-col justify-center h-[20.809px] overflow-hidden text-[#378BA6] truncate whitespace-nowrap font-jost text-[20px] my-2 font- leading-[28px]">Company: {job.company}</p>
         </div>

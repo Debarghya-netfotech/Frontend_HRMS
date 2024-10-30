@@ -11,9 +11,11 @@ const CandidateCard = ({ candidates }) => {
   if(candidates.candidate != null){
     candidates = candidates.candidate;
   }
+  
     
     
   return (
+    <div>
     <div className="p-4 bg-[#EAF1F3] rounded-lg shadow-md my-4">
       <div className="flex justify-between items-center mb-2 pb-4">
         <div className="flex items-center">
@@ -69,11 +71,23 @@ const CandidateCard = ({ candidates }) => {
           </div>
         </div>
         <div>
-          <p className='text-[#4F4F4F] bg-white font-jost text-[20px] font-bold leading-[36px] flex flex-row border border-[#4F4F4F] rounded-lg gap-2 justify-center items-center p-[10px_20px]'>
-            <img src={ExportIcon} alt="Export Icon" /> Export Report
+          <p className='text-[#4F4F4F] bg-white font-jost text-[20px] font-extrabold leading-[36px] flex flex-row border border-[#4F4F4F] rounded-lg gap-2 justify-center items-center p-[10px_20px]'>
+            <img src={ExportIcon} alt="Export Icon" /> View Form
           </p>
         </div>
       </div>
+      <hr/>
+      <div className='flex flex-row justify-between mt-4'>
+        <div className='flex flex-row items-center w-60%'>
+            <p className='text-[#378BA6] font-jost text-[16px] font-bold leading-[20.8px] tracking-[0.08px]'>Remarks : </p>
+            <textarea className='border-[#378BA6] border-[0.5px] w-40%'/> 
+        </div>
+        <div className='flex flex-row justify-between gap-4 '>
+            <button className="flex w-[160px] h-[44px] p-[8px_12px] justify-center items-center gap-2 rounded-[8px] bg-[#A4A4A4] text-white text-center font-jost text-[18px] font-semibold leading-[28px]">Select</button>
+            <button className="flex w-[160px] h-[44px] p-[8px_12px] justify-center items-center gap-2 rounded-[8px] bg-[#378BA6] text-white text-center font-jost text-[24px] font-semibold leading-[28px]">Reject</button>
+        </div>
+      </div>
+    </div>
     </div>
   );
 };

@@ -37,6 +37,17 @@ import EmpDashboard from './pages/Employer/DashBoard/Dashboard';
 import EmpJDdetail from './pages/Employer/JDDetail/JDdetail';
 import AddNewJDForm from './pages/Employer/New JD/AddNewJDForm';
 import SelectCandidate from './pages/Recruiter/CandidatesDatabase/SelectCandidate';
+import EmpCandidates from './pages/Employer/Candidates/EmpCandidates';
+import EmpJDList from './pages/Employer/New JD/EmpJDList';
+import EmpJDMaster from './pages/Employer/JDDetail/EmpJDMaster';
+import JD_Master_Details from './pages/Employer/JDDetail/JD_Master_Details';
+import Admin_About_Us from './pages/Admin/About Us/Admin_About_Us';
+import Admin_BankInfo from './pages/Admin/Profile/Admin_BankInfo';
+import Admin_PersonalInfo from './pages/Admin/Profile/Admin_PersonalInfo';
+import Admin_Profile from './pages/Admin/Profile/Admin_Profile';
+import Admin_Reset_Password from './pages/Admin/Profile/Admin_Reset_Password';
+import Admin_Finance_Invoice from './pages/Admin/Finance/Admin_Finance_Invoice';
+import Admin_Finance_JD_Details from './pages/Admin/Finance/Admin_Finance_JD_Details';
 function App() {
   return (
     <>
@@ -50,7 +61,7 @@ function App() {
           <Route path='/Signup-Success' element={<SignupSuccess />} />
           <Route path='/Multiform' element={<MultiStepForm />} />
           <Route path='/Profile-Success' element={<ProfileSuccess />} />
-          <Route path='/Profile' element={<PersonalInfo />} />
+          <Route path='/Profile-Recruiter' element={<PersonalInfo />} />
           <Route path='/ResetPassword' element={<ResetPassword />} />
           <Route path='/JDList' element={<JDList />} />
           <Route path='/Dashboard' element={<Dashboard />} />
@@ -79,6 +90,26 @@ function App() {
           <Route path='/AddJDForm' element={<AddNewJDForm />} />
           <Route path='/Employee-DashBoard' element={<EmpDashboard />} />
           <Route path='/SelectCandidate' element={<SelectCandidate />} />
+          <Route path='/EmpCandidates' element={<EmpCandidates />} />
+          <Route path='/EmpJDList' element={<EmpJDList />} />
+          <Route path='/EmpJDMaster' element={<EmpJDMaster />} />
+          <Route path='/JD_Master_Details/:id' element={<JD_Master_Details />} />
+
+
+
+
+          {/* //ADMIN// */}
+          <Route path='/Admin/About-Us' element={<Admin_About_Us />} />
+          <Route path='/Admin/BankInfo' element={<Admin_BankInfo />} />
+          <Route path='/Admin/PersonalInfo' element={<Admin_PersonalInfo />} />
+          <Route path='/Admin/Profile' element={<Admin_Profile />} />
+          <Route path='/Admin/Reset-Password' element={<Admin_Reset_Password />} />
+          <Route path='/Admin/Finance/invoice' element={<Admin_Finance_Invoice />} />
+          <Route path='/Admin/Finance/JD-Details' element={<Admin_Finance_JD_Details />} />
+
+
+
+
         </Routes>
       </BrowserRouter>
 

@@ -1,30 +1,43 @@
-import React, { useEffect } from 'react';
-import { useLocation,useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { IoMdClose } from "react-icons/io";
-import { MdDelete } from "react-icons/md"; // Imported but not used; remove if not needed
-import { FaBriefcase } from "react-icons/fa6";
+import { FaBriefcase, FaExternalLinkAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
-import { FaExternalLinkAlt } from "react-icons/fa";
- 
+import { GoTrash } from "react-icons/go";
+import axios from 'axios'; 
+
 const FinanceCandidate = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { candidate, selectedJDs } = location.state || {}; // Destructure candidate and selected JDs
- 
-  // Log candidate value to console
+  const { jd } = location.state || {}; 
+  const [candidates, setCandidates] = useState([]); 
   useEffect(() => {
-    if (candidate) {
-      console.log('Candidate:', candidate);
+    if (jd) {
+      console.log('JD:', jd);
+      fetchCandidates(); 
     }
-  }, [candidate]);
- 
- 
-  const handleViewMore = () => {
-    navigate('/CandidatesOne'); // Navigate to CandidatesOne page
+  }, [jd]);
+
+  const fetchCandidates = async () => {
+    try {
+      const response = await axios.get(`http://localhost:4000/api/jds/${jd._id}/candidates`);
+      setCandidates(response.data.candidates);
+      console.log('Fetched Candidates:', response.data); 
+    } catch (error) {
+      console.error('Error fetching candidates:', error);
+    }
   };
- 
- 
+
+  const handleViewMore = (candidateId) => {
+    navigate(`/CandidatesOne/${candidateId}`); 
+  };
+
+  console.log('Candidates State:', candidates);
+  if (candidates.length === 0) {
+    console.log('No candidates returned from API.');
+  }
+
   return (
     <div className='min-h-screen flex items-center bg-[#FBEFD0] justify-center p-4'>
       <div className='flex flex-col items-start p-4 lg:p-8 gap-4 rounded-lg bg-white w-full lg:w-[1200px] lg:h-[533px]'>
@@ -32,64 +45,76 @@ const FinanceCandidate = () => {
           <p className='text-[#4F4F4F] text-center font-jost text-base lg:text-[20px] font-medium leading-custom'>CANDIDATES</p>
           <button className='w-[24px] h-[24px] text-lg lg:text-xl'><IoMdClose /></button>
         </div>
- 
-        {/* Display candidate name */}
-        {candidate && (
-          <h2 className='flex p-2 lg:p-4 justify-center items-center rounded-[4px] bg-[#E8E8E8] text-sm lg:text-base'>
-            Candidate Name: {candidate.Last_name} {/* Display candidate name */}
-            Candidate id: {candidate._id}
-          </h2>
-         
-        )}
- 
-        {/* Dynamically display JD ID */}
-        {selectedJDs && selectedJDs.length > 0 && (
-          <h1 className='flex p-2 lg:p-4 justify-center items-center rounded-[4px] bg-[#E8E8E8] text-sm lg:text-base'>
-            JD: ID {selectedJDs[0]._id.slice(-4)} {/* Display first JD ID */}
+
+        
+        {jd && (
+          <h1 className='flex px-2 py-1 lg:px-2 lg:py-1 justify-center items-center rounded-lg bg-[#E8E8E8] text-sm lg:text-base'>
+            JD ID : {jd._id}
           </h1>
         )}
- 
+
         <div className="w-full h-px bg-[#848484]"></div>
- 
-        <div className='rounded-lg border border-teal-500 bg-white flex flex-col gap-3 p-4 lg:p-6 self-stretch'>
-          <div className='w-full h-px bg-black my-4 lg:my-6'></div>
- 
-          {/* Dynamically display job details */}
-          {selectedJDs && selectedJDs.length > 0 ? (
-            selectedJDs.map((jd, index) => (
-              <div key={index} className='flex flex-col lg:flex-row gap-4 lg:gap-8'>
-                <div className='flex flex-row items-center text-sm lg:text-base'>
-                  <FaBriefcase className='w-5 h-5 text-[#378BA6]' />
-                  <h1 className='text-gray-600 font-normal ml-2'>Job Title:</h1>
-                  <h1 className='text-gray-600 font-normal'>{jd.job_title}</h1>
+
+        {candidates.length > 0 ? (
+          candidates.map((candidate, index) => (
+            <div key={index} className='rounded-lg border border-teal-500 bg-white flex flex-col gap-3 p-4 lg:p-6 self-stretch'>
+              <div className='flex justify-between items-center'>
+                <div className='flex gap-2 items-center'>
+                  <div className='h-10 w-10 bg-[#ECB015] text-white items-center'>
+                    {candidate.First_name.charAt(0)}{candidate.Last_name.charAt(0)}
+                  </div>
+                  <div>
+                    <div className='font-jost font-semibold'>{candidate.First_name} {candidate.Last_name}</div>
+                    <div className='text-[var(--Teal,#378BA6)] font-jost'><p>Candidate ID: <b>{candidate._id}</b></p></div>
+                  </div>
                 </div>
-                <div className='flex flex-row items-center text-sm lg:text-base'>
-                  <FaLocationDot className='w-5 h-5 text-[#378BA6]' />
-                  <h1 className='text-gray-600 font-normal ml-2'>Location:</h1>
-                  <h1 className='text-gray-600 font-normal'>{jd.location}</h1>
-                </div>
-                <div className='flex flex-row items-center text-sm lg:text-base'>
-                  <RiMoneyRupeeCircleFill className='w-5 h-5 text-[#378BA6]' />
-                  <h1 className='text-gray-600 font-normal ml-2'>Salary:</h1>
-                  <h1 className='text-gray-600 font-normal'>{jd.absolute_payout}</h1>
-                </div>
-                <div className='flex flex-row items-center justify-center gap-2 py-2 px-3 rounded-md border border-gray-400 bg-white' onClick={handleViewMore}>
-                  <h1 className='text-sm lg:text-base'>View More</h1>
-                  <FaExternalLinkAlt />
+                <div className='flex gap-10'>
+                  <div className='flex items-center gap-1'><b>Exp : </b><div className='bg-[#FFFB9A] text-[#A38740] px-2 py-1 rounded-lg'>{candidate.Total_Experiences}</div></div>
+                  <GoTrash className='h-10 w-10 py-3 px-2 bg-[#EAF1F3]' />
                 </div>
               </div>
-            ))
-          ) : (
-            <div className='text-gray-600 text-sm lg:text-base'>
-              No job descriptions selected.
+              <div className='w-full h-px bg-black my-4 lg:my-6'></div>
+
+              
+              {jd ? (
+                <div className='flex justify-between'>
+                  <div className='flex justify-between gap-6'>
+                    <div className='flex flex-row items-center text-sm lg:text-base gap-1'>
+                      <FaBriefcase className='w-5 h-5 text-[#378BA6]' />
+                      <h1 className='text-gray-600 font-jost ml-2'>Job Title:</h1>
+                      <h1 className='text-gray-600 font-jost font-semibold'>{jd.job_title}</h1>
+                    </div>
+                    <div className='flex flex-row items-center text-sm lg:text-base gap-1'>
+                      <FaLocationDot className='w-5 h-5 text-[#378BA6]' />
+                      <h1 className='text-gray-600 font-jost ml-2'>Location:</h1>
+                      <h1 className='text-gray-600 font-jost font-semibold'>{candidate.Current_location}</h1>
+                    </div>
+                    <div className='flex flex-row items-center text-sm lg:text-base gap-1'>
+                      <RiMoneyRupeeCircleFill className='w-5 h-5 text-[#378BA6]' />
+                      <h1 className='text-gray-600 font-jost ml-2'>Salary:</h1>
+                      <h1 className='text-gray-600 font-jost font-semibold'>{candidate.Expected_salary}/- p.a.</h1>
+                    </div>
+                  </div>
+                  <div className='flex flex-row items-center justify-center gap-2 py-2 px-3 rounded-md border border-gray-400 bg-white' onClick={() => handleViewMore(candidate._id)}>
+                    <h1 className='text-xl lg:text-xl font-jost font-semibold text-[#4F4F4F]'>View More</h1>
+                    <FaExternalLinkAlt />
+                  </div>
+                </div>
+              ) : (
+                <div className='text-gray-600 text-sm lg:text-base'>
+                  No job description data available.
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          ))
+        ) : (
+          <div className='text-gray-600 text-sm lg:text-base'>
+            No candidates available for this job description.
+          </div>
+        )}
       </div>
     </div>
   );
 };
- 
+
 export default FinanceCandidate;
- 
- 

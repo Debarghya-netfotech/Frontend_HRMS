@@ -39,7 +39,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div className='w-full lg:w-1/2 lg:pl-8 mt-8 lg:mt-0'>
+        <div className='w-full lg:w-1/2 lg:pl-8 mt-8 lg:mt-0 '>
           <div className='pt-4 px-4 sm:px-6 lg:px-8 gap-4 rounded-[8px] border border-[#378BA6] bg-white flex flex-col'>
             <p className='font-jost text-[20px] sm:text-[24px] font-semibold leading-[24px] sm:leading-[28px] text-left mb-4'>Contact Us</p>
             <form className='flex flex-col gap-4'>
@@ -82,7 +82,7 @@ const Contact = () => {
               {/* Submit Button */}
               <button
                 type='submit'
-                className='w-full py-2 bg-[#378BA6] text-white rounded-[4px] hover:bg-[#2c6f8c] transition-colors duration-300 font-semibold'>
+                className='w-full py-2 bg-[#378BA6] text-white hover:bg-[#2c6f8c] transition-colors duration-300 font-semibold mb-8 rounded-lg'>
                 Submit
               </button>
             </form>
