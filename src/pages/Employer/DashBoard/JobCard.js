@@ -23,9 +23,12 @@ const JobCard = ({ limit = Infinity }) => {
             job.candidates.map(async (candidateId) => {
               const candidateResponse = await axios.get(`http://localhost:4000/api/candidate/${candidateId}`);
               return candidateResponse.data; // Assuming the API returns candidate details
+              console.log(candidateResponse);
+              
             })
           );
           return { ...job, candidates: candidateResponses }; // Attach candidate details to the job
+          
         })
       );
           
@@ -40,7 +43,7 @@ const JobCard = ({ limit = Infinity }) => {
 
   // console.log("Jobs -> " + JSON.stringify(jobs));
   
-  // console.log(jobs.job_id);
+  console.log(jobs);
   
   return (
     <div className="max-w-full mx-auto p-6 bg-white rounded-lg shadow-lg">

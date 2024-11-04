@@ -43,14 +43,14 @@ const Admin_Finance_Invoice = () => {
                                 <div className="p-2 border-r border-b border-gray-400 bg-[#EAF1F3] text-[#4F4F4F] text-center font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]">
                                     Total Value
                                 </div>
-                                <div className="p-2 border-gray-400 text-[#4F4F4F] text-center font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]">
+                                <div className="p-2 border-t border-gray-400 text-[#4F4F4F] text-center font-jost text-[16px] font-normal leading-[20.8px] tracking-[0.08px]">
                                     3000/-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button className="flex py-2 px-3 justify-end items-end gap-2 self-stretch rounded-lg bg-[#378BA6] text-white text-[20px] font-bold leading-[36px] font-jos">Done</button>
+                <button className="flex py-2 px-3 justify-end items-end gap-2 self-stretch rounded-lg bg-[#378BA6] text-white text-[20px] font-bold leading-[36px] font-jost">Done</button>
 
             </div>
         </div>

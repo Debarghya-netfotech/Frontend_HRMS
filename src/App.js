@@ -48,6 +48,11 @@ import Admin_Profile from './pages/Admin/Profile/Admin_Profile';
 import Admin_Reset_Password from './pages/Admin/Profile/Admin_Reset_Password';
 import Admin_Finance_Invoice from './pages/Admin/Finance/Admin_Finance_Invoice';
 import Admin_Finance_JD_Details from './pages/Admin/Finance/Admin_Finance_JD_Details';
+import AdminJd from './pages/Admin/AllJDs/AdminJd';
+import AdminSummery from './pages/Admin/AllJDs/AdminSummery';
+import EmployerMaster from './pages/Admin/EmployerMaster/EmployerMaster';
+import AdminEmployerfile from './pages/Admin/EmployerMaster/AdminEmployerfile';
+import AdminDashboard from './pages/Admin/Dashboard/AdminDashboard';
 function App() {
   return (
     <>
@@ -104,9 +109,13 @@ function App() {
           <Route path='/Admin/PersonalInfo' element={<Admin_PersonalInfo />} />
           <Route path='/Admin/Profile' element={<Admin_Profile />} />
           <Route path='/Admin/Reset-Password' element={<Admin_Reset_Password />} />
-          <Route path='/Admin/Finance/invoice' element={<Admin_Finance_Invoice />} />
           <Route path='/Admin/Finance/JD-Details' element={<Admin_Finance_JD_Details />} />
-
+          <Route path='/Admin/Finance/invoice' element={<Admin_Finance_Invoice />} />
+          <Route path='/Admin/JD/JD-Master' element={<AdminJd />} />
+          <Route path='/Admin/JD/JD-Summary' element={<AdminSummery />} />
+          <Route path='/Admin/Employer/Employer-Master' element={<EmployerMaster />} />
+          <Route path='/Admin/Employer/Employer-Form' element={<AdminEmployerfile />} />
+          <Route path='/Admin/Dashboard' element={<AdminDashboard />} />
 
 
 
